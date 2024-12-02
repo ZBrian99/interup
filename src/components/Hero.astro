@@ -1,0 +1,59 @@
+---
+const phoneNumber = '542236698045';
+const message = 'Hola! Me gustaría obtener más información sobre sus servicios.';
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<div
+	class='relative text-center font-sans min-h-svh w-full flex flex-col items-center justify-center bg-purple-0 overflow-hidden'
+>
+	<!-- Div para las estrellas en la parte superior -->
+	<div class='absolute inset-0 bg-stars animate-slide-down'></div>
+
+	<!-- Div para el planeta en la parte inferior -->
+	<div class='absolute inset-0 bg-planet animate-slide-up-lg'></div>
+
+	<!-- Mensaje de "Sitio en desarrollo" en la esquina superior derecha -->
+	<div class='absolute top-4 right-4 text-sm text-purple-light opacity-0 animate-slide-left'>
+		Sitio en desarrollo | <span class='text-white'>info@interup.dev</span>
+	</div>
+
+	<div class='z-10 flex flex-col gap-2 mb-16 p-4 md:mb-32 opacity-0 animate-fade-in'>
+		<h1 class='text-3xl md:text-4xl font-bold text-green-normal'>InterUp</h1>
+		<h2 class='text-xl md:text-2xl font-medium text-green-normal'>Digitalizamos tu negocio</h2>
+		<p class='text-base text-purple-light'>
+			Nos especializamos en integrar soluciones digitales en los modelos de negocio tradicionales
+		</p>
+
+		<a
+			href={whatsappUrl}
+			target='_blank'
+			rel='noopener noreferrer'
+			class='inline-flex items-center bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-1 font-semibold py-3 px-4 md:px-5 rounded-full shadow-md hover:shadow-lg active:shadow-sm transition-all duration-500 ease-in-out max-w-max mx-auto gap-2 mt-2 md:mt-4 hover:scale-105 active:scale-95'
+		>
+			Contáctanos
+		</a>
+	</div>
+</div>
+
+<style>
+	.bg-stars {
+		background-image: url('/estrellas.svg');
+		background-position: center top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		/* filter: blur(1px); */
+	}
+
+	.bg-planet {
+		background-image: url('/planeta.webp');
+		background-position: center top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		/* height: 40%; */
+		max-height: 40%;
+		max-width: 100%;
+		bottom: 0;
+		margin-top: auto;
+	}
+</style>

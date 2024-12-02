@@ -1,0 +1,53 @@
+---
+const menuItems = [
+  { href: '/', text: 'Inicio' },
+  { href: '/servicios', text: 'Servicios' },
+  { href: '/contacto', text: 'Contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-header bg-purple-0/80 backdrop-blur-sm">
+  <div class="container mx-auto px-4 py-4">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="text-green-normal text-xl font-bold">
+        InterUp
+      </a>
+      
+      <ul class="hidden md:flex items-center gap-6">
+        {menuItems.map(item => (
+          <li>
+            <a 
+              href={item.href}
+              class="text-purple-light hover:text-white transition-colors duration-300"
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden text-purple-light hover:text-white"
+        aria-label="Menú"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke-width="1.5" 
+          stroke="currentColor" 
+          class="w-6 h-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    transition: background-color 0.3s ease;
+  }
+</style>
