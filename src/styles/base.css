@@ -17,11 +17,11 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif font-medium;
+		@apply font-sans font-medium;
 	}
 
 	h1 {
-		@apply text-3xl md:text-4xl leading-tight;
+		@apply text-3xl md:text-4xl leading-tight font-bold;
 	}
 
 	h2 {
@@ -37,7 +37,7 @@
 	}
 }
 
-@layer components {
+/* @layer components {
 	.container {
 		@apply px-container md:px-container-md lg:px-container-lg mx-auto max-w-container;
 	}
@@ -47,4 +47,4 @@
 	.text-balance {
 		text-wrap: balance;
 	}
-}
+} */

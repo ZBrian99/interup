@@ -1,53 +1,133 @@
 ---
 const menuItems = [
-  { href: '/', text: 'Inicio' },
-  { href: '/servicios', text: 'Servicios' },
-  { href: '/contacto', text: 'Contacto' },
+	{ href: '/', text: 'Inicio' },
+	{ href: '/servicios', text: 'Servicios' },
+	{ href: '/contacto', text: 'Contacto' },
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-header bg-purple-0/80 backdrop-blur-sm">
-  <div class="container mx-auto px-4 py-4">
-    <nav class="flex items-center justify-between">
-      <a href="/" class="text-green-normal text-xl font-bold">
-        InterUp
-      </a>
-      
-      <ul class="hidden md:flex items-center gap-6">
-        {menuItems.map(item => (
-          <li>
-            <a 
-              href={item.href}
-              class="text-purple-light hover:text-white transition-colors duration-300"
-            >
-              {item.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+<header class='fixed top-0 left-0 right-0 z-header opacity-0 animate-fade-in'>
+	<div class='mx-auto'>
+		<nav class='rounded-b-[3rem] md:px-6 max-w-screen-xl mx-auto relative md:bg-purple-0 md:border md:border-purple-1'>
+			<div class='flex items-center justify-between px-4 py-3'>
+				<a href='/' class='text-green-normal text-xl font-bold hidden md:block'> InterUp </a>
 
-      <button 
-        id="mobile-menu-button"
-        class="md:hidden text-purple-light hover:text-white"
-        aria-label="Menú"
-      >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke-width="1.5" 
-          stroke="currentColor" 
-          class="w-6 h-6"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-    </nav>
-  </div>
+				<ul class='hidden md:flex items-center gap-8'>
+					{
+						menuItems.map((item) => (
+							<li>
+								<a href={item.href} class='text-purple-light hover:text-white transition-colors duration-300'>
+									{item.text}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+
+				<button
+					id='mobile-menu-button'
+					class='md:hidden text-purple-light hover:text-white bg-purple-0 border border-purple-1 rounded-full p-3 transition-colors duration-300 relative z-50 ml-auto'
+					aria-label='Menú'
+				>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						class='w-6 h-6'
+						id='menu-icon'
+					>
+						<path stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+						></path>
+					</svg>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Menú móvil -->
+		<div
+			id='mobile-menu'
+			class='hidden md:hidden fixed top-0 right-0 bottom-0 w-48 bg-purple-1 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out'
+		>
+			<div class='p-8 pt-20'>
+				<ul class='flex flex-col gap-6'>
+					{
+						menuItems.map((item) => (
+							<li>
+								<a
+									href={item.href}
+									class='block text-purple-light hover:text-white transition-colors duration-300 text-lg'
+								>
+									{item.text}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
 </header>
 
+<script>
+	function setupMobileMenu() {
+		const button = document.getElementById('mobile-menu-button');
+		const menu = document.getElementById('mobile-menu');
+		const menuIcon = document.getElementById('menu-icon');
+		let isOpen = false;
+
+		if (!button || !menu || !menuIcon) return;
+
+		const toggleMenu = (open: boolean) => {
+			isOpen = open;
+
+			if (open) {
+				menu.classList.remove('hidden');
+				menu.offsetHeight; // Forzamos un reflow
+				menu.classList.remove('translate-x-full');
+				menuIcon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        `;
+			} else {
+				menu.classList.add('translate-x-full');
+				menuIcon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        `;
+				setTimeout(() => {
+					menu.classList.add('hidden');
+				}, 300);
+			}
+		};
+
+		button.addEventListener('click', () => {
+			toggleMenu(!isOpen);
+		});
+
+		// Cerrar el menú al hacer click en un enlace
+		menu.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				toggleMenu(false);
+			});
+		});
+
+		// Cerrar el menú al redimensionar
+		window.addEventListener('resize', () => {
+			if (window.innerWidth >= 768 && isOpen) {
+				toggleMenu(false);
+			}
+		});
+	}
+
+	// Ejecutar cuando el DOM esté listo
+	document.addEventListener('DOMContentLoaded', setupMobileMenu);
+
+	// Ejecutar cuando Astro haya completado la navegación
+	document.addEventListener('astro:page-load', setupMobileMenu);
+</script>
+
 <style>
-  header {
-    transition: background-color 0.3s ease;
-  }
+	#mobile-menu {
+		transition: transform 0.3s ease-in-out;
+	}
 </style>
