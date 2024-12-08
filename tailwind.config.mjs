@@ -109,7 +109,7 @@ export default {
 				'slide-up': 'slideUpMobile 1s ease-out forwards',
 				'slide-up-lg': 'slideUpDesktop 1s ease-out forwards',
 				'slide-down': 'slideDown 1.5s ease-out',
-				'slide-left': 'slideLeft 1s ease-in-out forwards 1.5s',
+				'slide-left': 'slideLeft 1s ease-in-out forwards 1.25s',
 				'slide-right': 'slideRight 1s ease-in-out forwards .5s',
 				'bounce-soft': 'bounce 1s ease-in-out infinite',
 				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
