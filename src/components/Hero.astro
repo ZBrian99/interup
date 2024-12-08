@@ -8,13 +8,13 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 	class='relative text-center font-sans min-h-svh w-full flex flex-col items-center justify-center bg-purple-0 overflow-hidden'
 >
 	<!-- Div para las estrellas en la parte superior -->
-	<div class='absolute inset-0 bg-stars animate-slide-down'></div>
+	<div class='absolute inset-0 bg-stars animate-slide-down blur-[.5px]'></div>
 
 	<!-- Div para el planeta en la parte inferior -->
 	<div class='absolute inset-0 bg-planet animate-slide-up-lg'></div>
 
 	<!-- Mensaje de "Sitio en desarrollo" en la esquina superior derecha -->
-	<div class='absolute top-4 right-4 text-sm text-purple-light opacity-0 animate-slide-left'>
+	<div class='absolute bottom-4 left-4 text-sm text-purple-light opacity-0 animate-slide-left'>
 		Sitio en desarrollo | <span class='text-white'>info@interup.dev</span>
 	</div>
 

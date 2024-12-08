@@ -48,7 +48,7 @@ const menuItems = [
 		<!-- Menú móvil -->
 		<div
 			id='mobile-menu'
-			class='hidden md:hidden fixed top-0 right-0 bottom-0 w-48 bg-purple-1 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out'
+			class='hidden md:hidden fixed top-0 right-0 bottom-0 w-56 bg-purple-1 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out border-l border-purple-3'
 		>
 			<div class='p-8 pt-20'>
 				<ul class='flex flex-col gap-6'>
@@ -84,7 +84,7 @@ const menuItems = [
 
 			if (open) {
 				menu.classList.remove('hidden');
-				menu.offsetHeight; // Forzamos un reflow
+				// menu.offsetHeight; // Forzamos un reflow
 				menu.classList.remove('translate-x-full');
 				menuIcon.innerHTML = `
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -94,9 +94,9 @@ const menuItems = [
 				menuIcon.innerHTML = `
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         `;
-				setTimeout(() => {
-					menu.classList.add('hidden');
-				}, 300);
+				// setTimeout(() => {
+				// 	menu.classList.add('hidden');
+				// }, 300);
 			}
 		};
 
