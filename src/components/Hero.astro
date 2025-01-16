@@ -5,13 +5,12 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 ---
 
 <div
-	class='relative text-center font-sans min-h-svh w-full flex flex-col items-center justify-center bg-purple-0 overflow-hidden'
+	class='relative text-center font-sans min-h-svh w-full flex flex-col items-center justify-center bg-purple-0'
 >
 	<!-- Div para las estrellas en la parte superior -->
 	<div class='absolute inset-0 bg-stars animate-slide-down blur-[.5px]'></div>
 
 	<!-- Div para el planeta en la parte inferior -->
-	<div class='absolute inset-0 bg-planet animate-slide-up-lg'></div>
 
 	<!-- Mensaje de "Sitio en desarrollo" en la esquina superior derecha -->
 	<div class='absolute bottom-4 left-4 text-sm text-purple-light opacity-0 animate-slide-left'>
@@ -45,15 +44,5 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 		/* filter: blur(1px); */
 	}
 
-	.bg-planet {
-		background-image: url('/planeta.webp');
-		background-position: center top;
-		background-size: cover;
-		background-repeat: no-repeat;
-		/* height: 40%; */
-		max-height: 40%;
-		max-width: 100%;
-		bottom: 0;
-		margin-top: auto;
-	}
+	
 </style>

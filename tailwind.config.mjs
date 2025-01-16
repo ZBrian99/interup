@@ -135,8 +135,8 @@ export default {
 					'100%': { transform: 'translateY(0)' },
 				},
 				slideUpDesktop: {
-					'0%': { transform: 'translateY(50px)', opacity: '0' },
-					'100%': { transform: 'translateY(0px)', opacity: '1' },
+					'0%': { transform: 'translateY(50px)'},
+					'100%': { transform: 'translateY(0px)'},
 				},
 				slideDown: {
 					'0%': { transform: 'translateY(-50px)', opacity: '0' },

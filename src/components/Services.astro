@@ -1,0 +1,68 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+	{
+		title: 'Planificación Estelar',
+		description:
+			'Exploramos juntos las necesidades de tu proyecto digital. Definimos objetivos y trazamos la mejor ruta para tu idea.',
+		icon: '/service1.svg',
+		link: '/',
+		borderColor: 'to-tag-blue',
+		textColor: 'text-tag-blue',
+	},
+	{
+		title: 'Desarrollo Universal',
+		description:
+			'Construimos experiencias digitales atractivas y funcionales. Combinamos diseño intuitivo con desarrollo eficiente para dar vida a tu proyecto.',
+		icon: '/service2.svg',
+		link: '/',
+		borderColor: 'to-tag-pink',
+		textColor: 'text-tag-pink',
+	},
+	{
+		title: 'Mantenimiento Orbital',
+		description:
+			'Garantizamos el funcionamiento óptimo de tu proyecto. Proporcionamos soporte continuo y mejoras para mantener tu plataforma actualizada.',
+		icon: '/service3.svg',
+		link: '/',
+		borderColor: 'to-tag-orange',
+		textColor: 'text-tag-orange',
+	},
+];
+---
+
+<section class='py-20 flex items-center justify-center bg-purple-1 animate-slide-up-lg'>
+	<div class='absolute w-[120%] h-[100%] bg-planet'></div>
+
+	<div class='container mx-auto px-4 max-w-7xl'>
+		<h2 class='text-center text-green-normal mb-16'>Nuestros servicios</h2>
+
+		<div class='flex gap-8 justify-center flex-wrap lg:flex-nowrap lg:justify-between'>
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</div>
+	<!-- <img src='/curva1.svg' alt='Fondo decorativo' class='absolute bottom-0 object-cover w-full h-auto translate-y-1/2 -z-50' /> -->
+	<!-- <div class='absolute bottom-[-50%] w-full h-auto'> -->
+	<img
+		src='/curva1.svg'
+		alt='Fondo decorativo'
+		class='absolute bottom-[-10%] md:bottom-[-25%] w-full h-auto object-cover -z-50'
+	/>
+	<!-- </div> -->
+</section>
+
+<style>
+	.bg-planet {
+		background-image: url('/planeta.webp');
+		background-position: center top;
+		background-size: contain cover;
+		background-repeat: no-repeat;
+		/* height: 40%; */
+		/* max-height: 40%; */
+		/* max-width: 100%; */
+		position: absolute;
+		top: -50%;
+		/* margin-top: auto; */
+	}
+</style>
