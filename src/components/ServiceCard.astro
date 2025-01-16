@@ -4,21 +4,23 @@ interface Props {
 	description: string;
 	icon: string;
 	link: string;
-	borderColor: string;
-	textColor: string;
+	color: string;
+	index: number;
 }
 
-const { title, description, icon, link, borderColor, textColor } = Astro.props;
+const { title, description, icon, link, color, index } = Astro.props;
 ---
 
 <article
-	class={`flex flex-col items-center  p-[4px] max-w-96 lg:max-w-none relative rounded-2xl bg-gradient-to-t from-purple-normal ${borderColor} hover:rotate-1 hover:scale-105 transition-transform duration-300`}
+	class={`flex flex-col flex-1 items-center p-1 lg:max-w-none relative rounded-2xl bg-gradient-to-t from-purple-normal to-${color} before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:opacity-0 before:transition-opacity hover:before:opacity-100 before:blur-xl before:bg-${color}`}
 >
-	<div class='h-full bg-purple-darker rounded-2xl p-6 flex flex-col items-center gap-4 text-center'>
-		<div class='w-20 h-20 p-2 bg-purple-2 rounded-full'>
+	<div
+		class='w-full h-full bg-purple-darker rounded-2xl p-6 flex flex-col items-center gap-2 text-center hover:bg-purple-darker/90 transition-colors'
+	>
+		<div class={`w-20 h-20 p-2 bg-purple-3 rounded-full border border-${color}`}>
 			<img src={icon} alt={`Icono de ${title}`} class='w-full h-full' />
 		</div>
-		<h3 class={`${textColor} text-xl font-medium`}>{title}</h3>
+		<h3 class={`text-${color} text-xl font-medium`}>{title}</h3>
 		<p class='text-purple-light text-center'>{description}</p>
 		<!-- <a
 			href={link}
