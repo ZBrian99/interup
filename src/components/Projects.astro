@@ -1,5 +1,183 @@
 ---
+interface ProjectLink {
+	url: string;
+	label: string;
+	icon?: 'portal' | 'admin' | 'register';
+}
+
+interface Project {
+	title: string;
+	description: string;
+	images: string[];
+	links?: ProjectLink[];
+}
+
+import ProjectCard from './ProjectCard.astro';
+
+const projects: Project[] = [
+	{
+		title: 'Gestión de Cursos',
+		description:
+			'Plataforma que automatiza la gestión de cursos, aumentando la eficiencia operativa y mejorando la experiencia del cliente.',
+		images: [
+			'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400',
+			'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800',
+			'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200',
+		],
+		links: [
+			{ url: '#', label: 'Portal de Alumnos', icon: 'portal' },
+			{ url: '#', label: 'Panel Administrativo', icon: 'admin' },
+			{ url: '#', label: 'Registro de Referidos', icon: 'register' },
+		],
+	},
+	{
+		title: 'Control de Acceso Gym',
+		description:
+			'Sistema que moderniza la gestión del gimnasio, mejorando la experiencia del cliente y simplificando las operaciones diarias.',
+		images: [
+			'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200',
+			'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200',
+		],
+		links: [
+			{ url: '#', label: 'Portal de Clientes' },
+			{ url: '#', label: 'Panel de Control' },
+		],
+	},
+	{
+		title: 'Landing Page Pizzería',
+		description:
+			'Sitio web moderno que aumenta la presencia online y facilita la captación de pedidos, mejorando las ventas digitales.',
+		images: [
+			'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&h=600',
+			'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1200&h=600',
+			'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&h=600',
+		],
+		links: [{ url: '#', label: 'Ver Sitio Web' }],
+	},
+];
 ---
-<section>
-  <!-- Contenido pendiente -->
+
+<section class='relative py-20 overflow-hidden bg-purple-darker px-4'>
+	<div class='max-w-7xl mx-auto'>
+		<div class='text-center mb-16'>
+			<h2 class='text-3xl md:text-4xl font-serif font-bold text-green-normal mb-4'>Bitácora de Proyectos</h2>
+			{/* Alternativa: Casos de Éxito */}
+		</div>
+
+		<div class='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+			{projects.map((project, index) => <ProjectCard project={project} projectIndex={index} />)}
+		</div>
+	</div>
 </section>
+
+<script>
+	interface CarouselElements {
+		container: HTMLElement;
+		slides: HTMLElement[];
+		dots: HTMLElement[];
+		prevBtn: HTMLElement;
+		nextBtn: HTMLElement;
+	}
+
+	class Carousel {
+		private elements: CarouselElements;
+		private currentSlide: number = 0;
+		private interval: ReturnType<typeof setInterval> | undefined = undefined;
+		private totalSlides: number;
+
+		constructor(container: HTMLElement) {
+			const prevBtn = container.querySelector('.carousel-prev');
+			const nextBtn = container.querySelector('.carousel-next');
+
+			if (!prevBtn || !nextBtn) {
+				throw new Error('Carousel buttons not found');
+			}
+
+			this.elements = {
+				container,
+				slides: Array.from(container.querySelectorAll('.carousel-slide')) as HTMLElement[],
+				dots: Array.from(container.querySelectorAll('.carousel-dots button')) as HTMLElement[],
+				prevBtn: prevBtn as HTMLElement,
+				nextBtn: nextBtn as HTMLElement,
+			};
+			this.totalSlides = this.elements.slides.length;
+
+			this.init();
+		}
+
+		private init(): void {
+			if (this.totalSlides > 0) {
+				this.showSlide(0);
+				this.setupEventListeners();
+				this.startAutoplay();
+			}
+		}
+
+		private showSlide(index: number): void {
+			this.elements.slides.forEach((slide) => {
+				slide.style.opacity = '0';
+				slide.style.pointerEvents = 'none';
+			});
+
+			this.elements.dots.forEach((dot) => {
+				dot.classList.remove('bg-white/80');
+				dot.classList.add('bg-white/50');
+			});
+
+			const normalizedIndex = ((index % this.totalSlides) + this.totalSlides) % this.totalSlides;
+
+			this.elements.slides[normalizedIndex].style.opacity = '1';
+			this.elements.slides[normalizedIndex].style.pointerEvents = 'auto';
+			this.elements.dots[normalizedIndex].classList.remove('bg-white/50');
+			this.elements.dots[normalizedIndex].classList.add('bg-white/80');
+
+			this.currentSlide = normalizedIndex;
+		}
+
+		private setupEventListeners(): void {
+			this.elements.prevBtn.addEventListener('click', () => this.navigate(-1));
+			this.elements.nextBtn.addEventListener('click', () => this.navigate(1));
+
+			this.elements.dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => this.showSlide(index));
+			});
+
+			this.elements.container.addEventListener('mouseenter', () => this.stopAutoplay());
+			this.elements.container.addEventListener('mouseleave', () => this.startAutoplay());
+		}
+
+		private navigate(direction: number): void {
+			this.showSlide(this.currentSlide + direction);
+			this.stopAutoplay();
+			this.startAutoplay();
+		}
+
+		private startAutoplay(): void {
+			this.stopAutoplay();
+			this.interval = setInterval(() => this.navigate(1), 5000);
+		}
+
+		private stopAutoplay(): void {
+			if (this.interval) {
+				clearInterval(this.interval);
+			}
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('[data-carousel]').forEach((container) => {
+			try {
+				new Carousel(container as HTMLElement);
+			} catch (error) {
+				console.error('Error initializing carousel:', error);
+			}
+		});
+	});
+</script>
+
+<style>
+	.carousel-slide {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+</style>

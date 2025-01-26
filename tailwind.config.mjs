@@ -37,8 +37,8 @@ export default {
 				},
 				normal: {
 					DEFAULT: '#78F493',
-					hover: '#6CDC84',
-					active: '#5fc476',
+					hover: '#5FE87C',
+					active: '#4AD367',
 				},
 				dark: {
 					DEFAULT: '#5AB76E',

@@ -1,0 +1,39 @@
+servicios:
+  - nombre: "Asesoría Estelar"
+    descripcion: "Analizamos y definimos juntos la ruta ideal para tu proyecto, estableciendo objetivos claros y alcanzables."
+    icono: "💫 / estrella-guia.svg"
+
+  - nombre: "Desarrollo Universal"
+    descripcion: "Transformamos tus ideas en soluciones a medida, priorizando calidad y rendimiento óptimo."
+    icono: "🚀 / cohete-construccion.svg"
+
+
+  - nombre: "Mantenimiento Orbital"
+    descripcion: "Mantenemos tu proyecto actualizado y seguro, implementando mejoras para su crecimiento continuo."
+    icono: "⚡ / energia-orbital.svg"
+
+pasos:
+  - paso: 1
+    nombre: "Primer Contacto"
+    descripcion: "Nos reunimos para conocer tus ideas y objetivos, entendiendo qué necesitas y cómo podemos ayudarte."
+    icono: "🤝 / encuentro-inicial.svg"
+
+  - paso: 2
+    nombre: "Planificación de Misión"
+    descripcion: "Trazamos un plan detallado, definiendo las etapas y recursos necesarios para hacer realidad tu proyecto."
+    icono: "📋 / plan-estrategico.svg"
+
+  - paso: 3
+    nombre: "Ensamblaje de Módulos"
+    descripcion: "Construimos tu proyecto paso a paso, manteniendo una comunicación constante y adaptándonos a tus necesidades."
+    icono: "🔧 / desarrollo-precision.svg"
+
+  - paso: 4
+    nombre: "Protocolo de Activación"
+    descripcion: "Preparamos todo para el lanzamiento asegurando que cada componente funcione correctamente."
+    icono: "✨ / optimizacion-final.svg"
+
+  - paso: 5
+    nombre: "Control de Parámetros"
+    descripcion: "Supervisamos el rendimiento y realizamos los ajustes necesarios para asegurar un funcionamiento óptimo."
+    icono: "📈 / evolucion-continua.svg"

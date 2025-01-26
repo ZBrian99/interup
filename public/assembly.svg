@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Órbita decorativa -->
+    <path d="M40 15C26.9543 15 15 26.9543 15 40" stroke="url(#orbitGradient)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 6"/>
+    
+    <!-- Hexágonos encajando -->
+    <path d="M20 25L30 19L40 25L40 37L30 43L20 37L20 25Z" 
+          stroke="#E2E8F0" 
+          stroke-width="3"
+          stroke-linejoin="round"/>
+          
+    <path d="M40 25L50 19L60 25L60 37L50 43L40 37L40 25Z" 
+          stroke="#E2E8F0" 
+          stroke-width="3"
+          stroke-linejoin="round"/>
+          
+    <path d="M30 37L40 31L50 37L50 49L40 55L30 49L30 37Z" 
+          stroke="#E2E8F0" 
+          stroke-width="3"
+          stroke-linejoin="round"/>
+    
+    <!-- Líneas de conexión -->
+    <path d="M39 31L41 31M39 43L41 43" 
+          stroke="#38BDF8" 
+          stroke-width="3" 
+          stroke-linecap="round"/>
+    
+    <!-- Destellos en las uniones -->
+    <circle cx="40" cy="31" r="2" fill="#38BDF8"/>
+    <circle cx="40" cy="43" r="2" fill="#38BDF8"/>
+    
+    <!-- Definiciones de gradientes -->
+    <defs>
+        <linearGradient id="orbitGradient" x1="40" y1="15" x2="15" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.8"/>
+        </linearGradient>
+    </defs>
+</svg> 

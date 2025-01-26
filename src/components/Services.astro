@@ -1,11 +1,10 @@
 ---
 import ServiceCard from './ServiceCard.astro';
-
 const services = [
 	{
-		title: 'Planificación Estelar',
+		title: 'Asesoría Estelar',
 		description:
-			'Exploramos juntos las necesidades de tu proyecto digital. Definimos objetivos y trazamos la mejor ruta para tu idea.',
+			'Analizamos y definimos juntos la ruta ideal para tu proyecto, estableciendo objetivos claros y alcanzables.',
 		icon: '/service1.svg',
 		link: '/',
 		color: 'tag-blue',
@@ -13,7 +12,7 @@ const services = [
 	{
 		title: 'Desarrollo Universal',
 		description:
-			'Construimos experiencias digitales atractivas y funcionales. Combinamos diseño intuitivo con desarrollo eficiente para dar vida a tu proyecto.',
+			'Transformamos tus ideas en soluciones a medida, priorizando calidad y rendimiento óptimo.',
 		icon: '/service2.svg',
 		link: '/',
 		color: 'tag-pink',
@@ -21,7 +20,7 @@ const services = [
 	{
 		title: 'Mantenimiento Orbital',
 		description:
-			'Garantizamos el funcionamiento óptimo de tu proyecto. Proporcionamos soporte continuo y mejoras para mantener tu plataforma actualizada.',
+			'Mantenemos tu proyecto actualizado y seguro, implementando mejoras para su crecimiento continuo.',
 		icon: '/service3.svg',
 		link: '/',
 		color: 'tag-orange',
@@ -35,7 +34,7 @@ const services = [
 	<div class='container mx-auto px-4 max-w-7xl'>
 		<h2 class='text-center text-green-normal mb-16'>Nuestros servicios</h2>
 
-		<div class='flex gap-8 justify-center  flex-col lg:flex-row'>
+		<div class='flex gap-8 justify-center flex-col lg:flex-row'>
 			{services.map((service, index) => <ServiceCard {...service} index={index} />)}
 		</div>
 	</div>
