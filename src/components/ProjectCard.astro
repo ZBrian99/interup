@@ -23,7 +23,9 @@ const { project, projectIndex } = Astro.props as Props;
 ---
 
 <!-- Contenedor principal de la tarjeta con gradiente y efectos hover -->
-<div class='bg-purple-normal rounded-2xl overflow-hidden border border-purple-light/30 flex flex-col'>
+<article
+	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full'
+>
 	{/* Sección del Carrusel de Imágenes */}
 	<div class='relative h-56' data-carousel={`carousel-${projectIndex}`}>
 		<div class='carousel-container h-full'>
@@ -85,7 +87,7 @@ const { project, projectIndex } = Astro.props as Props;
 		<p class='text-purple-light mb-6'>{project.description}</p>
 
 		{/* Botones de acción */}
-		<div class='flex gap-4 mt-auto'>
+		<div class='flex gap-4 mt-auto flex-wrap'>
 			{/* Botón Principal - Ver Proyecto */}
 			{
 				project.links?.[0] && (
@@ -93,11 +95,13 @@ const { project, projectIndex } = Astro.props as Props;
 						href={project.links[0].url}
 						target='_blank'
 						rel='noopener noreferrer'
-						class='group flex-1 inline-flex items-center justify-center px-6 py-2.5 bg-purple-3 rounded-full text-sm font-medium transition-all duration-300 hover:bg-purple-2 active:bg-purple-darker border border-purple-light/30 gap-2'
+						class='min-w-[10rem] group flex-[2] inline-flex items-center justify-center px-6 py-2.5 bg-purple-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-purple-dark-active active:bg-purple-darker gap-2'
 					>
-						<span class='relative z-10'>Ver Proyecto</span>
+						<span class='relative z-10 text-nowrap group-hover:font-bold transition-all duration-300'>
+							Ver Proyecto
+						</span>
 						<svg
-							class='w-4 h-4 text-purple-light transition-transform duration-300 ease-out group-hover:[transform:translateX(0.375rem)_scale(1.15)]'
+							class='w-4 h-4 text-purple-light transition-transform duration-300 ease-out group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
 							viewBox='0 0 24 24'
 							fill='none'
 							stroke='currentColor'
@@ -113,12 +117,14 @@ const { project, projectIndex } = Astro.props as Props;
 				href={`https://wa.me/+34123456789?text=¡Hola! Me gustaría obtener más información sobre el proyecto "${project.title}"`}
 				target='_blank'
 				rel='noopener noreferrer'
-				class='inline-flex items-center justify-center px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full text-sm font-medium transition-colors duration-300 border border-green-light/30 gap-2 group'
+				class='min-w-[9.5rem] flex-1 inline-flex items-center justify-center px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full text-sm font-medium transition-colors duration-300 gap-2 group relative'
 				aria-label='Saber más información por WhatsApp'
 			>
-				<span>Saber más</span>
+				<span class='group-hover:font-bold transition-all duration-300 text-nowrap'>Saber más</span>
+				<!-- <span class='opacity-100 group-hover:opacity-0 transition-all duration-300'>Saber más</span> -->
+				<!-- <span class='absolute mr-7 font-bold opacity-0 group-hover:opacity-100 transition-all duration-300'>Saber más</span> -->
 				<svg
-					class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.15)]'
+					class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
 					viewBox='0 0 60 60'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
@@ -133,7 +139,7 @@ const { project, projectIndex } = Astro.props as Props;
 			</a>
 		</div>
 	</div>
-</div>
+</article>
 
 {/* Estilos para la animación del carrusel */}
 <style>

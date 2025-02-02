@@ -35,6 +35,36 @@
 	h4 {
 		@apply text-lg md:text-xl leading-snug;
 	}
+
+	/* Scrollbar personalizada */
+	::-webkit-scrollbar {
+		width: 0.5rem; /* 8px - un poco más ancha para que se note el redondeo */
+	}
+
+	::-webkit-scrollbar-track {
+		background: theme('colors.purple.darker');
+		border-radius: theme('borderRadius.full');
+		margin: 0.25rem; /* Añade espacio para que se vea el redondeo */
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: theme('colors.purple.dark.DEFAULT');
+		border-radius: theme('borderRadius.full');
+		border: 2px solid theme('colors.purple.darker'); /* Borde para efecto "flotante" */
+		background-clip: padding-box; /* Hace que el borde sea parte del thumb */
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: theme('colors.green.normal.DEFAULT');
+		border: 2px solid theme('colors.purple.darker');
+		background-clip: padding-box;
+	}
+
+	/* Para Firefox */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: theme('colors.purple.dark.DEFAULT') theme('colors.purple.darker');
+	}
 }
 
 /* @layer components {

@@ -11,11 +11,11 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 	<!-- Div para el planeta en la parte inferior -->
 
 	<!-- Mensaje de "Sitio en desarrollo" en la esquina superior derecha -->
-	<div class='absolute bottom-4 left-4 text-sm opacity-0 animate-slide-left'>
+	<!-- <div class='absolute bottom-4 left-4 text-sm opacity-0 animate-slide-left'>
 		Sitio en desarrollo | <span class='text-white'>info@interup.dev</span>
-	</div>
+	</div> -->
 
-	<div class='z-10 flex flex-col gap-2 mb-16 p-4 md:mb-32 opacity-0 animate-fade-in'>
+	<div class='z-10 flex flex-col gap-2 mb-16 p-4 md:mb-32 opacity-100 animate-fade-in2'>
 		<h1 class='text-3xl md:text-4xl font-bold text-green-normal font-sans'>InterUp</h1>
 		<h2 class='text-xl md:text-2xl font-medium text-green-normal'>Digitalizamos tu negocio</h2>
 		<p class='text-base'>Nos especializamos en integrar soluciones digitales en los modelos de negocio tradicionales</p>
@@ -24,11 +24,11 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 			href={whatsappUrl}
 			target='_blank'
 			rel='noopener noreferrer'
-			class='inline-flex items-center justify-center px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full font-medium transition-colors duration-300 border border-green-light/30 max-w-max mx-auto mt-4 gap-2 group'
+			class='min-w-[11.5rem] inline-flex items-center justify-center px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full font-medium transition-colors duration-300  max-w-max mx-auto mt-4 gap-2 group'
 		>
-			<span>Contáctanos</span>
+			<span class='group-hover:font-bold transition-all duration-300'>Contáctanos</span>
 			<svg
-				class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.15)]'
+				class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
 				viewBox='0 0 60 60'
 				fill='none'
 				xmlns='http://www.w3.org/2000/svg'

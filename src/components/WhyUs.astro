@@ -3,38 +3,40 @@ const phoneNumber = '542236698045';
 ---
 
 <section class='py-16 sm:py-20 lg:py-24 bg-purple-1'>
-	<div
-		class='max-w-3xl lg:max-w-7xl mx-auto px-4 bg-purple-normal border border-purple-light/30 rounded-3xl p-6 sm:p-8 lg:p-10'
-	>
-		<div class='flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12'>
+	<div class='mx-auto max-w-4xl lg:max-w-7xl px-6 lg:px-8'>
+		<div
+			class='flex flex-col lg:flex-row items-stretch gap-20 lg:gap-8 lg:bg-purple-normal rounded-2xl lg:shadow-lg lg:p-8'
+		>
 			{/* Texto - Por qué elegirnos */}
-			<div class='flex flex-col w-full lg:w-1/2'>
-				<h2 class='text-3xl md:text-4xl font-serif font-bold text-green-normal'>¿Por qué elegirnos?</h2>
-				<p class='text-purple-light mt-4 lg:mt-6 text-base lg:text-lg leading-relaxed'>
+			<div
+				class='flex flex-col w-full lg:w-1/2 bg-purple-normal lg:bg-none rounded-2xl shadow-lg lg:shadow-none p-6  lg:p-0'
+			>
+				<h2 class='text-2xl md:text-4xl font-bold text-green-normal'>¿Por qué InterUp?</h2>
+				<p class='text-white mt-4 lg:mt-6 text-base lg:text-lg leading-relaxed'>
 					Especializados en convertir ideas en soluciones digitales excepcionales, combinando experiencia técnica con
 					entendimiento empresarial.
 				</p>
 				<ul class='mt-6 lg:mt-8 space-y-4'>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-green-normal/20 flex items-center justify-center'>
+						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Desarrollo personalizado adaptado a tus necesidades específicas</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-green-normal/20 flex items-center justify-center'>
+						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Tecnologías modernas y mejores prácticas de desarrollo</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-green-normal/20 flex items-center justify-center'>
+						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Comunicación clara y transparente durante todo el proceso</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-green-normal/20 flex items-center justify-center'>
+						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Soluciones escalables y mantenibles a largo plazo</p>
@@ -43,51 +45,51 @@ const phoneNumber = '542236698045';
 			</div>
 
 			{/* Formulario de contacto */}
-			<div class='w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center'>
-				<div class='bg-purple-dark p-6 sm:p-8 rounded-xl w-full'>
-					<h3 class='text-2xl font-serif font-bold mb-6 text-green-normal'>¿Hablamos de tu proyecto?</h3>
-					<form id='contactForm' class='flex flex-col gap-4' data-phone={phoneNumber}>
-						<div class='flex flex-col gap-2'>
-							<label for='nombre' class='text-white/80 text-sm'>Nombre</label>
-							<input
-								type='text'
-								id='nombre'
-								name='nombre'
-								placeholder='Tu nombre'
-								class='px-4 py-3 rounded-lg bg-purple-dark-hover border border-[transparent] text-white focus:border-green-normal outline-none'
-							/>
-						</div>
-						<div class='flex flex-col gap-2'>
-							<label for='mensaje' class='text-white/80 text-sm'>Mensaje</label>
-							<textarea
-								id='mensaje'
-								name='mensaje'
-								placeholder='Cuéntame brevemente sobre tu proyecto'
-								rows='4'
-								class='px-4 py-3 rounded-lg bg-purple-dark-hover border border-[transparent] text-white focus:border-green-normal outline-none resize-none'
-							></textarea>
-						</div>
-						<button
-							type='submit'
-							class='mt-2 w-full sm:w-fit sm:ml-auto px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full text-sm font-medium transition-colors duration-300 border border-green-light/30 flex items-center justify-center gap-2 group'
+			<div
+				class='w-full lg:w-1/2 mt-8 lg:mt-0 flex flex-col justify-center shadow-lg bg-purple-normal lg:bg-purple-dark-hover p-6  rounded-2xl'
+			>
+				<h3 class='text-2xl md:text-4xl lg:text-2xl font-serif font-bold mb-6 text-green-normal'>¿Hablamos de tu proyecto?</h3>
+				<form id='contactForm' class='flex flex-col gap-4' data-phone={phoneNumber}>
+					<div class='flex flex-col gap-2'>
+						<label for='nombre' class='text-purple-light text-sm'>Nombre</label>
+						<input
+							type='text'
+							id='nombre'
+							name='nombre'
+							placeholder='Tu nombre'
+							class='px-4 py-3 rounded-lg bg-purple-dark-hover lg:bg-purple-dark-active border border-[transparent] text-white focus:border-green-normal outline-none'
+						/>
+					</div>
+					<div class='flex flex-col gap-2'>
+						<label for='mensaje' class='text-purple-light text-sm'>Mensaje</label>
+						<textarea
+							id='mensaje'
+							name='mensaje'
+							placeholder='Cuéntame brevemente sobre tu proyecto'
+							rows='4'
+							class='px-4 py-3 rounded-lg bg-purple-dark-hover lg:bg-purple-dark-active border border-[transparent] text-white focus:border-green-normal outline-none resize-none'
+						></textarea>
+					</div>
+					<button
+						type='submit'
+						class='mt-2 min-w-[11.5rem] w-full sm:w-fit sm:ml-auto px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full text-sm font-medium transition-colors duration-300 flex items-center justify-center gap-2 group'
+					>
+						<span class='group-hover:font-bold transition-all duration-300'>Enviar mensaje</span>
+						<svg
+							class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
+							viewBox='0 0 60 60'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
 						>
-							<span>Enviar mensaje</span>
-							<svg
-								class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
-								viewBox='0 0 60 60'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M0.250781 29.6316C0.249141 34.8542 1.62422 39.9526 4.23844 44.4465L0 59.8016L15.837 55.6814C20.2005 58.0421 25.1135 59.2867 30.1127 59.2886H30.1256C46.59 59.2886 59.993 45.9937 60 29.6553C60.0028 21.7372 56.8978 14.2914 51.2578 8.69023C45.6171 3.08977 38.1171 0.00325581 30.1256 0C13.6584 0 0.257344 13.293 0.250781 29.6316ZM9.68227 43.6726L9.09094 42.7412C6.60516 38.8193 5.29312 34.2872 5.295 29.6335C5.30016 16.0533 16.4386 5.00465 30.135 5.00465C36.7678 5.00744 43.0013 7.57302 47.6897 12.2279C52.3779 16.8833 54.9577 23.0716 54.956 29.6535C54.9499 43.2337 43.8112 54.2837 30.1256 54.2837H30.1158C25.6596 54.2814 21.2892 53.0939 17.4778 50.85L16.5708 50.3163L7.17281 52.7612L9.68227 43.6726Z'
-									fill='currentColor'></path>
-								<path
-									d='M22.659 17.2437C22.0997 16.0105 21.5112 15.9856 20.9794 15.9639C20.544 15.9453 20.0461 15.9467 19.5488 15.9467C19.051 15.9467 18.2422 16.1326 17.5585 16.8733C16.8741 17.6146 14.9457 19.4063 14.9457 23.0502C14.9457 26.6942 17.6206 30.216 17.9935 30.7107C18.3669 31.2044 23.1575 38.9216 30.7447 41.8905C37.0503 44.3577 38.3335 43.867 39.702 43.7432C41.0708 43.62 44.1186 41.9521 44.7404 40.2226C45.3626 38.4933 45.3626 37.0109 45.1761 36.7012C44.9895 36.3926 44.4917 36.2072 43.7452 35.837C42.9987 35.4667 39.3286 33.6746 38.6445 33.4274C37.9601 33.1805 37.4626 33.0572 36.9647 33.7988C36.4669 34.5393 35.0375 36.2072 34.6018 36.7012C34.1665 37.1963 33.7308 37.2579 32.9846 36.8874C32.2376 36.5158 29.8336 35.7346 26.9815 33.2116C24.7625 31.2484 23.2643 28.8239 22.8289 28.0823C22.3934 27.3419 22.7822 26.9405 23.1565 26.5714C23.4919 26.2395 23.9033 25.7065 24.2769 25.2742C24.649 24.8416 24.7733 24.533 25.0222 24.0391C25.2713 23.5446 25.1466 23.1121 24.9603 22.7416C24.7733 22.3712 23.3227 18.7081 22.659 17.2437Z'
-									fill='currentColor'></path>
-							</svg>
-						</button>
-					</form>
-				</div>
+							<path
+								d='M0.250781 29.6316C0.249141 34.8542 1.62422 39.9526 4.23844 44.4465L0 59.8016L15.837 55.6814C20.2005 58.0421 25.1135 59.2867 30.1127 59.2886H30.1256C46.59 59.2886 59.993 45.9937 60 29.6553C60.0028 21.7372 56.8978 14.2914 51.2578 8.69023C45.6171 3.08977 38.1171 0.00325581 30.1256 0C13.6584 0 0.257344 13.293 0.250781 29.6316ZM9.68227 43.6726L9.09094 42.7412C6.60516 38.8193 5.29312 34.2872 5.295 29.6335C5.30016 16.0533 16.4386 5.00465 30.135 5.00465C36.7678 5.00744 43.0013 7.57302 47.6897 12.2279C52.3779 16.8833 54.9577 23.0716 54.956 29.6535C54.9499 43.2337 43.8112 54.2837 30.1256 54.2837H30.1158C25.6596 54.2814 21.2892 53.0939 17.4778 50.85L16.5708 50.3163L7.17281 52.7612L9.68227 43.6726Z'
+								fill='currentColor'></path>
+							<path
+								d='M22.659 17.2437C22.0997 16.0105 21.5112 15.9856 20.9794 15.9639C20.544 15.9453 20.0461 15.9467 19.5488 15.9467C19.051 15.9467 18.2422 16.1326 17.5585 16.8733C16.8741 17.6146 14.9457 19.4063 14.9457 23.0502C14.9457 26.6942 17.6206 30.216 17.9935 30.7107C18.3669 31.2044 23.1575 38.9216 30.7447 41.8905C37.0503 44.3577 38.3335 43.867 39.702 43.7432C41.0708 43.62 44.1186 41.9521 44.7404 40.2226C45.3626 38.4933 45.3626 37.0109 45.1761 36.7012C44.9895 36.3926 44.4917 36.2072 43.7452 35.837C42.9987 35.4667 39.3286 33.6746 38.6445 33.4274C37.9601 33.1805 37.4626 33.0572 36.9647 33.7988C36.4669 34.5393 35.0375 36.2072 34.6018 36.7012C34.1665 37.1963 33.7308 37.2579 32.9846 36.8874C32.2376 36.5158 29.8336 35.7346 26.9815 33.2116C24.7625 31.2484 23.2643 28.8239 22.8289 28.0823C22.3934 27.3419 22.7822 26.9405 23.1565 26.5714C23.4919 26.2395 23.9033 25.7065 24.2769 25.2742C24.649 24.8416 24.7733 24.533 25.0222 24.0391C25.2713 23.5446 25.1466 23.1121 24.9603 22.7416C24.7733 22.3712 23.3227 18.7081 22.659 17.2437Z'
+								fill='currentColor'></path>
+						</svg>
+					</button>
+				</form>
 			</div>
 		</div>
 	</div>

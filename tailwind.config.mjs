@@ -13,9 +13,9 @@ export default {
 					active: '#C3C0E2',
 				},
 				normal: {
-					DEFAULT: '#3F34A3',
-					hover: '#392F93',
-					active: '#322A82',
+					DEFAULT: '#2D2980 ',
+					hover: '#352C88',
+					active: '#2F277A',
 				},
 				dark: {
 					DEFAULT: '#2F277A',
@@ -89,6 +89,7 @@ export default {
 			xs: '375px', // Móviles pequeños
 			sm: '480px', // Móviles grandes
 			md: '768px', // Tablets
+			md2: '900px', // Tablets grandes
 			lg: '1024px', // Laptops/Desktops pequeños
 			xl: '1280px', // Desktops
 			'2xl': '1440px', // Pantallas grandes
@@ -135,8 +136,8 @@ export default {
 					'100%': { transform: 'translateY(0)' },
 				},
 				slideUpDesktop: {
-					'0%': { transform: 'translateY(50px)'},
-					'100%': { transform: 'translateY(0px)'},
+					'0%': { transform: 'translateY(50px)' },
+					'100%': { transform: 'translateY(0px)' },
 				},
 				slideDown: {
 					'0%': { transform: 'translateY(-50px)', opacity: '0' },
@@ -196,7 +197,6 @@ export default {
 				sm: '0 2px 4px rgba(0, 0, 0, 0.05)', // Sutil, para elementos hover
 				md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // Cards, elementos elevados
 				lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // Modales, elementos destacados
-
 			},
 		},
 	},

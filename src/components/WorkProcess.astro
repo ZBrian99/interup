@@ -40,13 +40,9 @@ const pasos: WorkStep[] = [
 ---
 
 <section class='py-32 bg-purple-1'>
-	<h2 class='text-3xl md:text-4xl font-serif text-green-normal text-center mb-16 font-bold'>Cómo trabajamos</h2>
+	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16'>Cómo trabajamos</h2>
 
-	<div class='flex flex-col max-w-5xl mx-auto md:gap-0 px-6'>
-		{
-			pasos.map((paso, index) => (
-				<WorkProcessCard {...paso} index={index} isLast={index === pasos.length - 1}/>
-			))
-		}
+	<div class='flex flex-col mx-auto md:max-w-3xl md2:max-w-7xl px-6 lg:px-8'>
+		{pasos.map((paso, index) => <WorkProcessCard {...paso} index={index} isLast={index === pasos.length - 1} />)}
 	</div>
 </section>
