@@ -10,7 +10,7 @@ interface Props {
 const { nombre, descripcion, icon, index, isLast } = Astro.props;
 ---
 
-<div class={`relative flex-1 group md2:w-1/2 ${index % 2 === 0 ? 'md2:mr-auto' : 'md2:ml-auto'} py-4 md2:py-0 group`}>
+<div class={`relative flex-1 group md2:w-1/2 ${index % 2 === 0 ? 'md2:mr-auto' : 'md2:ml-auto'} py-4 md2:py-0 group z-10`}>
 	<!-- Conector (línea + punto) -->
 	<div>
 		<div

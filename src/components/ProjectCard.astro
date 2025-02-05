@@ -24,7 +24,7 @@ const { project, projectIndex } = Astro.props as Props;
 
 <!-- Contenedor principal de la tarjeta con gradiente y efectos hover -->
 <article
-	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full'
+	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full z-10'
 >
 	{/* Sección del Carrusel de Imágenes */}
 	<div class='relative h-56' data-carousel={`carousel-${projectIndex}`}>
