@@ -107,7 +107,7 @@ export default {
 			animation: {
 				'fade-in': 'fadeIn 1s ease-in-out forwards 0.5s',
 				'fade-out': 'fadeOut 0.5s ease-in-out',
-				'slide-up': 'slideUpMobile 1s ease-out forwards',
+				'slide-up': 'slideUp 1s ease-out forwards',
 				'slide-up-lg': 'slideUpDesktop 1s ease-out forwards',
 				'slide-down': 'slideDown 1.5s ease-out',
 				'slide-left': 'slideLeft 1s ease-in-out forwards 1.25s',
@@ -117,6 +117,8 @@ export default {
 				'spin-slow': 'spin 3s linear infinite',
 				'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
 				scale: 'scale 0.3s ease-in-out',
+				'float-left': 'floatLeft 6s ease-in-out infinite',
+				'float-right': 'floatRight 6s ease-in-out infinite',
 				shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
 				'pulse-large': 'largePulse 7s ease-in-out infinite 5s',
 				'fade-in-then-pulse':
@@ -131,6 +133,10 @@ export default {
 					'0%': { opacity: '1' },
 					'100%': { opacity: '0' },
 				},
+				slideUp: {
+					'0%': { transform: 'translateY(30px)' },
+					'100%': { transform: 'translateY(0)' },
+				},
 				slideUpMobile: {
 					'0%': { transform: 'translateY(50px)' },
 					'100%': { transform: 'translateY(0)' },
@@ -140,8 +146,8 @@ export default {
 					'100%': { transform: 'translateY(0px)' },
 				},
 				slideDown: {
-					'0%': { transform: 'translateY(-50px)', opacity: '0' },
-					'100%': { transform: 'translateY(0)', opacity: '1' },
+					'0%': { transform: 'translateY(-100px) scale(1.1)', opacity: '0' },
+					'100%': { transform: 'translateY(0) scale(1)', opacity: '.5' },
 				},
 				slideLeft: {
 					'0%': { transform: 'translateX(20px)', opacity: '0' },
@@ -160,6 +166,22 @@ export default {
 					'20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
 					'30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
 					'40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
+				},
+				floatLeft: {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1.05)',
+					},
+					'50%': {
+						transform: 'translate(-10px, 20px) ',
+					},
+				},
+				floatRight: {
+					'0%, 100%': {
+						transform: 'translate(0, 0)',
+					},
+					'50%': {
+						transform: 'translate(-10px, -20px) scale(1.05)',
+					},
 				},
 				largePulse: {
 					'0%, 14%': {

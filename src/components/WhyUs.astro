@@ -2,14 +2,14 @@
 const phoneNumber = '542236698045';
 ---
 
-<section class='py-16 sm:py-20 lg:py-24  relative'>
+<section class='py-20 relative z-10'>
 	<div class='mx-auto max-w-4xl lg:max-w-7xl px-6 lg:px-8'>
 		<div
-			class='flex flex-col lg:flex-row items-stretch gap-20 lg:gap-8 lg:bg-purple-normal rounded-2xl lg:shadow-lg lg:p-8'
+			class='flex flex-col lg:flex-row items-stretch gap-40 lg:gap-8 lg:bg-purple-normal rounded-2xl lg:shadow-lg lg:p-8'
 		>
 			{/* Texto - Por qué elegirnos */}
 			<div
-				class='flex flex-col w-full lg:w-1/2 bg-purple-normal lg:bg-none rounded-2xl shadow-lg lg:shadow-none p-6  lg:p-0'
+				class='flex flex-col w-full lg:w-1/2 bg-purple-normal lg:bg-none rounded-2xl shadow-lg lg:shadow-none p-6 lg:p-0'
 			>
 				<h2 class='text-2xl md:text-4xl font-bold text-green-normal'>¿Por qué InterUp?</h2>
 				<p class='text-white mt-4 lg:mt-6 text-base lg:text-lg leading-relaxed'>
@@ -43,12 +43,13 @@ const phoneNumber = '542236698045';
 					</li>
 				</ul>
 			</div>
-
 			{/* Formulario de contacto */}
 			<div
-				class='w-full lg:w-1/2 mt-8 lg:mt-0 flex flex-col justify-center shadow-lg bg-purple-normal lg:bg-purple-dark-hover p-6  rounded-2xl'
+				class='w-full lg:w-1/2 mt-8 lg:mt-0 flex flex-col justify-center shadow-lg bg-purple-normal lg:bg-purple-dark-hover p-6 rounded-2xl'
 			>
-				<h3 class='text-2xl md:text-4xl lg:text-2xl font-serif font-bold mb-6 text-green-normal'>¿Hablamos de tu proyecto?</h3>
+				<h3 class='text-2xl md:text-4xl lg:text-2xl font-serif font-bold mb-6 text-green-normal'>
+					¿Hablamos de tu proyecto?
+				</h3>
 				<form id='contactForm' class='flex flex-col gap-4' data-phone={phoneNumber}>
 					<div class='flex flex-col gap-2'>
 						<label for='nombre' class='text-purple-light text-sm'>Nombre</label>
@@ -93,6 +94,18 @@ const phoneNumber = '542236698045';
 			</div>
 		</div>
 	</div>
+	<img src='/astronauta.svg' alt='Fondo decorativo' class='absolute -top-10 left-0 -z-10' />
+
+	<img
+		src='/curva4.svg'
+		alt='Fondo decorativo'
+		class='absolute w-full h-[40%] object-cover scale-x-[-1] bottom-[31%] -z-20 lg:hidden'
+	/>
+	<img
+		src='/curva5.svg'
+		alt='Fondo decorativo'
+		class='absolute w-full h-[40%] object-cover lg:object-fill scale-x-[-1] bottom-[-18%] lg:h-[50%] lg:bottom-[-25%] -z-20'
+	/>
 </section>
 
 <script>
