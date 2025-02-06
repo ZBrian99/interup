@@ -7,124 +7,134 @@ const menuItems = [
 ---
 
 <header
-	class='fixed top-0 left-0 right-0 z-header opacity-0 animate-fade-in md:border-purple-3 md:bg-purple-0 md:border-b'
+	class='fixed top-0 left-0 right-0 z-header opacity-0 animate-fade-in bg-purple-0 h-16 flex items-center justify-center px-4'
 >
-	<nav class='md:px-4 max-w-7xl mx-auto relative'>
-		<div class='flex items-center justify-between px-4 py-3'>
+	<nav class='max-w-7xl w-full mx-auto flex items-center justify-between'>
+		<!-- Logo -->
+		<a href='#inicio' class='flex gap-4'>
+			<img src='/logo.svg' alt='InterUp Logo' class='h-9 w-9' />
+			<h6 class='text-xl font-sans font-bold text-green-normal'>InterUp</h6>
+		</a>
 
-			<a href='/' class='text-green-normal text-xl font-bold hidden md:block'> InterUp </a>
-
-			<ul class='hidden md:flex items-center gap-8'>
-				{
-					menuItems.map((item) => (
-						<li>
-							<a href={item.href} class=' hover:text-white transition-colors duration-300'>
+		<!-- Menú escritorio -->
+		<ul class='hidden md:flex items-center gap-8'>
+			{
+				menuItems.map((item) => (
+					<li>
+						<a href={item.href} class='text-purple-light relative px-4 py-2 group'>
+							<span class='relative z-10 group-hover:text-green-normal transition-colors duration-300 font-medium'>
 								{item.text}
-							</a>
-						</li>
-					))
-				}
-			</ul>
+							</span>
+							<span class='absolute mx-auto bottom-0 left-0 right-0 w-0 h-0.5 bg-green-normal group-hover:w-full transition-all duration-300' />
+						</a>
+					</li>
+				))
+			}
+		</ul>
 
-			<button
-				id='mobile-menu-button'
-				class='md:hidden hover:text-white bg-purple-0 border border-purple-1 rounded-full p-3 transition-colors duration-300 relative z-50 ml-auto'
-				aria-label='Menú'
+		<!-- Botón mobile -->
+		<button
+			id='mobile-menu-button'
+			class='md:hidden rounded-full p-2 transition-all duration-300 relative z-50 ml-auto'
+			aria-label='Menú'
+		>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				fill='none'
+				viewBox='0 0 24 24'
+				stroke-width='1.5'
+				stroke='currentColor'
+				class='w-8 h-8 text-purple-light'
+				id='menu-icon'
 			>
-				<svg
-					xmlns='http://www.w3.org/2000/svg'
-					fill='none'
-					viewBox='0 0 24 24'
-					stroke-width='1.5'
-					stroke='currentColor'
-					class='w-6 h-6'
-					id='menu-icon'
-				>
-					<path stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
-				</svg>
-			</button>
-		</div>
+				<path stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
+			</svg>
+		</button>
 	</nav>
 
 	<!-- Menú móvil -->
 	<div
 		id='mobile-menu'
-		class='hidden md:hidden fixed top-0 right-0 bottom-0 w-56 bg-purple-1 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out border-l border-purple-3'
+		class='md:hidden fixed w-56 h-[calc(100lvh-4rem)] top-16 right-0 flex flex-col p-8 bg-purple-0 transition-transform duration-300 ease-in-out transform translate-x-full'
 	>
-		<div class='p-8 pt-20'>
-			<ul class='flex flex-col gap-6'>
-				{
-					menuItems.map((item) => (
-						<li>
-							<a href={item.href} class='block  hover:text-white transition-colors duration-300 text-lg'>
-								{item.text}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</div>
+		<ul class='flex flex-col gap-8'>
+			{
+				menuItems.map((item) => (
+					<li>
+						<a
+							href={item.href}
+							class='text-purple-light hover:text-green-normal transition-colors duration-300 text-lg font-medium relative group py-2 px-4 flex justify-between items-center'
+						>
+							<span class='relative z-10'>{item.text}</span>
+							<span class='absolute bottom-0 left-0 right-0 w-0 h-0.5 bg-green-normal group-hover:w-full transition-all duration-300' />
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</div>
 </header>
 
 <script>
-	function setupMobileMenu() {
+	function initMobileMenu() {
 		const button = document.getElementById('mobile-menu-button');
 		const menu = document.getElementById('mobile-menu');
 		const menuIcon = document.getElementById('menu-icon');
-		let isOpen = false;
+		const header = document.querySelector('header');
 
-		if (!button || !menu || !menuIcon) return;
+		if (!button || !menu || !menuIcon || !header) return;
 
-		const toggleMenu = (open: boolean) => {
-			isOpen = open;
-
-			if (open) {
-				menu.classList.remove('hidden');
-				// menu.offsetHeight; // Forzamos un reflow
-				menu.classList.remove('translate-x-full');
-				menuIcon.innerHTML = `
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        `;
-			} else {
-				menu.classList.add('translate-x-full');
-				menuIcon.innerHTML = `
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        `;
-				// setTimeout(() => {
-				// 	menu.classList.add('hidden');
-				// }, 300);
-			}
+		const elements = {
+			button: button as HTMLButtonElement,
+			menu: menu as HTMLDivElement,
+			menuIcon: menuIcon as HTMLElement,
+			header: header as HTMLElement,
 		};
 
-		button.addEventListener('click', () => {
-			toggleMenu(!isOpen);
-		});
+		const isMenuOpen = () => !elements.menu.classList.contains('translate-x-full');
 
-		// Cerrar el menú al hacer click en un enlace
-		menu.querySelectorAll('a').forEach((link) => {
-			link.addEventListener('click', () => {
+		function toggleMenu(open = !isMenuOpen()) {
+			if (open === isMenuOpen()) return;
+
+			if (open) {
+				elements.menu.classList.remove('translate-x-full');
+				elements.menuIcon.innerHTML =
+					'<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+				elements.button.setAttribute('aria-expanded', 'true');
+			} else {
+				elements.menu.classList.add('translate-x-full');
+				elements.menuIcon.innerHTML =
+					'<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+				elements.button.setAttribute('aria-expanded', 'false');
+			}
+		}
+
+		document.addEventListener('click', (event) => {
+			const target = event.target as Node;
+
+			if (elements.button.contains(target)) {
+				event.stopPropagation();
+				toggleMenu();
+				return;
+			}
+
+			if (isMenuOpen() && !elements.header.contains(target)) {
 				toggleMenu(false);
-			});
+			}
 		});
 
-		// Cerrar el menú al redimensionar
 		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 768 && isOpen) {
+			if (window.innerWidth >= 768 && isMenuOpen()) {
 				toggleMenu(false);
 			}
 		});
 	}
 
-	// Ejecutar cuando el DOM esté listo
-	document.addEventListener('DOMContentLoaded', setupMobileMenu);
-
-	// Ejecutar cuando Astro haya completado la navegación
-	document.addEventListener('astro:page-load', setupMobileMenu);
-</script>
-
-<style>
-	#mobile-menu {
-		transition: transform 0.3s ease-in-out;
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initMobileMenu);
+	} else {
+		initMobileMenu();
 	}
-</style>
+
+	document.addEventListener('astro:page-load', initMobileMenu);
+</script>
