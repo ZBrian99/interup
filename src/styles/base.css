@@ -37,34 +37,29 @@
 	}
 
 	/* Scrollbar personalizada */
+	
+	/* Primero definimos los estilos para Webkit (Chrome, Safari, etc) */
 	::-webkit-scrollbar {
-		width: 0.5rem; /* 8px - un poco más ancha para que se note el redondeo */
+		width: 0.375rem; /* 6px */
 	}
 
 	::-webkit-scrollbar-track {
-		background: theme('colors.purple.darker');
-		border-radius: theme('borderRadius.full');
-		margin: 0.25rem; /* Añade espacio para que se vea el redondeo */
+		@apply bg-purple-0 rounded-full;
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: theme('colors.purple.dark.DEFAULT');
-		border-radius: theme('borderRadius.full');
-		border: 2px solid theme('colors.purple.darker'); /* Borde para efecto "flotante" */
-		background-clip: padding-box; /* Hace que el borde sea parte del thumb */
+		@apply bg-purple-normal rounded-full transition-colors duration-200 ease-in-out;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-		background: theme('colors.green.normal.DEFAULT');
-		border: 2px solid theme('colors.purple.darker');
-		background-clip: padding-box;
+		@apply bg-purple-normal-hover;
 	}
 
-	/* Para Firefox */
-	* {
-		scrollbar-width: thin;
-		scrollbar-color: theme('colors.purple.dark.DEFAULT') theme('colors.purple.darker');
+	::-webkit-scrollbar-button {
+		display: none;
 	}
+
+
 }
 
 /* @layer components {

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Círculo exterior -->
+    <circle cx="24" cy="24" r="18" 
+            stroke="url(#paint0_linear)" 
+            stroke-width="2" 
+            stroke-linecap="round"/>
+    
+    <!-- Líneas de medición -->
+    <path d="M24 12V16" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M24 32V36" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M36 24H32" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 24H12" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Aguja de control -->
+    <path d="M24 24L32 16" 
+          stroke="url(#paint1_linear)" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+    
+    <!-- Punto central -->
+    <circle cx="24" cy="24" r="3" fill="url(#paint2_linear)"/>
+    
+    <!-- Marcadores de medición -->
+    <path d="M33.9 33.9L31.8 31.8" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M14.1 14.1L16.2 16.2" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M33.9 14.1L31.8 16.2" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    <path d="M14.1 33.9L16.2 31.8" stroke="#3F34A3" stroke-width="2" stroke-linecap="round"/>
+    
+    <defs>
+        <linearGradient id="paint0_linear" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear" x1="24" y1="24" x2="32" y2="16" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear" x1="21" y1="21" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+    </defs>
+</svg>
