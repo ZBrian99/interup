@@ -8,17 +8,17 @@
           stroke-dasharray="2 3"/>
 
      <!-- Ondas/Continentes -->
-    <path d="M10 26C16 20 18 30 24 27C28 26 34 18 38 22" 
+    <path d="M11 26C16 20 18 30 24 27C28 26 34 18 38 22" 
           stroke="url(#paint1_linear)" 
           stroke-width="2" 
           stroke-linecap="round"/>
           
-    <path d="M12 16C14 14 18 18 24 16C30 14 34 18 36 16" 
+    <path d="M13 16C14 14 18 18 24 16C30 14 34 18 36 17" 
           stroke="url(#paint1_linear)" 
           stroke-width="2" 
           stroke-linecap="round"/>
           
-    <path d="M14 34C12 30 20 36 26 32C32 28 36 32 37 30" 
+    <path d="M14 34C13 30 20 36 26 32C32 28 36 32 37 29" 
           stroke="url(#paint1_linear)" 
           stroke-width="2" 
           stroke-linecap="round"/>
@@ -26,7 +26,7 @@
     <!-- Planeta base -->
     <circle cx="24" cy="24" r="14" 
             stroke="url(#paint0_linear)" 
-            stroke-width="2.5" 
+            stroke-width="2" 
             stroke-linecap="round"/>
     
    

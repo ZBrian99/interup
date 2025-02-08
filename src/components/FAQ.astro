@@ -49,9 +49,9 @@ const faqs: Question[] = [
 	<div class='faq-container flex flex-col gap-4 mx-auto max-w-4xl px-6 lg:px-8'>
 		{
 			faqs.map((faq) => (
-				<div class='faq-item bg-purple-normal rounded-lg overflow-hidden cursor-pointer transition-all duration-300 shadow-lg'>
+				<div class='faq-item bg-purple-normal rounded-lg overflow-hidden cursor-pointer transition-all duration-300 shadow-lg text-white'>
 					<div class='w-full text-left p-4 flex justify-between items-center gap-4'>
-						<span class='text-white font-medium flex-1 '>{faq.question}</span>
+						<span class='font-medium flex-1 '>{faq.question}</span>
 						<img
 							src='/arrow-down.svg'
 							alt='Expandir'
@@ -60,7 +60,7 @@ const faqs: Question[] = [
 					</div>
 					<div class='faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out'>
 						<div class='p-4  flex '>
-							<p class='text-purple-light flex-1 mr-8 '>{faq.answer}</p>
+							<p class='flex-1 mr-8 '>{faq.answer}</p>
 						</div>
 					</div>
 				</div>

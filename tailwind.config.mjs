@@ -122,7 +122,7 @@ export default {
 				shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
 				'pulse-large': 'largePulse 7s ease-in-out infinite 5s',
 				'fade-in-then-pulse':
-					'fadeIn 1s ease-in-out .5s forwards, largePulse 14s cubic-bezier(0.4, 0, 0.6, 1) infinite 10s',
+					'fadeIn 1s ease-in-out forwards 0.5s, scalePulse 20s ease-in-out infinite 5s, largePulse 20s ease-in-out infinite 5s',
 			},
 			keyframes: {
 				fadeIn: {
@@ -183,18 +183,22 @@ export default {
 						transform: 'translate(-10px, -20px) scale(1.05)',
 					},
 				},
+		
+				scalePulse: {
+					'0%': { transform: 'scale(1)' },
+					'3%': { transform: 'scale(1.15)' },
+					'6%': { transform: 'scale(1)' },
+					'100%': { transform: 'scale(1)' },
+				},
 				largePulse: {
-					'0%, 14%': {
-						boxShadow: '0 0 0 0 rgba(96, 214, 105, 0.6)',
-						// transform: 'scale(1)',
+					'0%': {
+						boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.4)',
 					},
-					'7%': {
-						boxShadow: '0 0 0 20px rgba(96, 214, 105, 0)',
-						// transform: 'scale(1.05)',
+					'6%': {
+						boxShadow: '0 0 0 30px rgba(37, 211, 102, 0)',
 					},
-					'14%, 100%': {
-						boxShadow: '0 0 0 0 rgba(96, 214, 105, 0)',
-						// transform: 'scale(1)',
+					'100%': {
+						boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)',
 					},
 				},
 			},

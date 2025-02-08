@@ -10,7 +10,9 @@ interface Props {
 const { nombre, descripcion, icon, index, isLast } = Astro.props;
 ---
 
-<div class={`relative flex-1 group md2:w-1/2 ${index % 2 === 0 ? 'md2:mr-auto' : 'md2:ml-auto'} py-4 md2:py-0 group z-10`}>
+<div
+	class={`relative flex-1 group md2:w-1/2 ${index % 2 === 0 ? 'md2:mr-auto' : 'md2:ml-auto'} py-4 md2:py-0 group z-10`}
+>
 	<!-- Conector (línea + punto) -->
 	<div>
 		<div
@@ -33,7 +35,10 @@ const { nombre, descripcion, icon, index, isLast } = Astro.props;
 			${index % 2 === 0 ? 'md2:left-auto md2:right-0 md2:translate-x-1/2' : ''} 
 			rounded-lg bg-purple-1 border border-purple-light/80 group-hover:border-green-normal transition-colors duration-300`}
 		>
-			<div class='absolute inset-1.5 rounded-lg bg-purple-light/80 group-hover:bg-green-normal transition-colors duration-300'></div>
+			<div
+				class='absolute inset-1.5 rounded-lg bg-purple-light/80 group-hover:bg-green-normal transition-colors duration-300'
+			>
+			</div>
 		</div>
 	</div>
 
@@ -41,19 +46,21 @@ const { nombre, descripcion, icon, index, isLast } = Astro.props;
 	<div
 		class={`bg-purple-normal rounded-lg p-6 shadow-lg  
 		ml-8 ${index % 2 === 0 ? 'md2:ml-0 md2:mr-12' : 'md2:ml-12'}
-    border border-[transparent] group-hover:border-green-normal transition-colors duration-300
+    border border-[transparent] group-hover:border-green-normal transition-colors duration-300 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden z-0
     `}
 	>
-		<div class='flex flex-col sm:flex-row items-center gap-6'>
-			<div class='w-16 md:w-20 h-16 md:h-20 shrink-0 rounded-full bg-purple-2 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300 mr-auto'>
-				<img src={icon} alt={`Icono de ${nombre}`} class='w-full h-full p-1' />
-			</div>
-			<div>
-				<h3 class='text-xl font-bold text-white group-hover:text-green-normal transition-colors duration-300 mb-3'>
-					{nombre}
-				</h3>
-				<p class='text-purple-light text-sm leading-relaxed'>{descripcion}</p>
-			</div>
+		<div
+			class='w-1/2 sm:w-16 md:w-20 h-auto sm:h-16 md:h-20 shrink-0 rounded-full bg-purple-2 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300 mr-auto absolute sm:relative -bottom-10 sm:-bottom-0 -right-10 sm:-right-0  -z-10  opacity-20 sm:opacity-100'
+		>
+			<img src={icon} alt={`Icono de ${nombre}`} class='w-full h-full p-1' />
+		</div>
+		<div>
+			<h3 class='text-xl font-bold text-white group-hover:text-green-normal transition-colors duration-300 mb-3'>
+				{nombre}
+			</h3>
+			<p class='text-purple-light group-hover:text-white transition-colors duration-300 text-sm leading-relaxed'>
+				{descripcion}
+			</p>
 		</div>
 	</div>
 </div>

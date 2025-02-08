@@ -1,28 +1,23 @@
-# navbar 
-# scrollbar
-
-writting:
-
-  hero?
-  titulos
-  servicio
-  saber mas?
-  why us
-  faqs
-  footer
-  contact
+  navbar: navegacion a toda la pagina.
+  servicio: descripciones no estar acorde a los steps que son mas agradables de leer.
+  saber mas: saber mas? ver mas? mas info? cual uso para los botones de este estilo?.
+  proyectos: titulo y descripcion a corde con el proyecto.
+  por que interup: frase y destacados y descripcion del formulario.
+  faqs: añadir preguntas y respuestas reales que puedan llegar a ser necesarias.
+  footer: navegacion igual que la navbar, soluciones tipicas, contacto, redes sociales, etc.
 
 
 content:
 
-  steps icons
-  projects
+  imagenes de todos los proyectos reales.
 
+  gym, añadir link al admin panel en el control de acceso.
+  
+  pipzum, revisar todo y optimizar.
 
 extra:
 
-  animations
-  intersection observer
+  intersection observer para animar toda la pagina.
   
 
 

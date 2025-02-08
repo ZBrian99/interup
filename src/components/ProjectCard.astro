@@ -24,7 +24,7 @@ const { project, projectIndex } = Astro.props as Props;
 
 <!-- Contenedor principal de la tarjeta con gradiente y efectos hover -->
 <article
-	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full z-10'
+	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full z-10 hover:translate-y-[-.5rem] ease-in-out hover:shadow-xl transition-all duration-300 group/card'
 >
 	{/* Sección del Carrusel de Imágenes */}
 	<div class='relative h-56' data-carousel={`carousel-${projectIndex}`}>
@@ -83,8 +83,12 @@ const { project, projectIndex } = Astro.props as Props;
 	{/* Sección de información del proyecto */}
 	<div class='p-6 pt-4 flex flex-col grow'>
 		{/* Título y descripción */}
-		<h3 class='text-xl font-bold text-white mb-3'>{project.title}</h3>
-		<p class='text-purple-light mb-6'>{project.description}</p>
+		<h3 class='text-xl font-bold text-white mb-3 group-hover/card:text-green-normal transition-colors duration-300'>
+			{project.title}
+		</h3>
+		<p class='text-purple-light mb-6 group-hover/card:text-white transition-colors duration-300'>
+			{project.description}
+		</p>
 
 		{/* Botones de acción */}
 		<div class='flex gap-4 mt-auto flex-wrap'>
@@ -97,11 +101,11 @@ const { project, projectIndex } = Astro.props as Props;
 						rel='noopener noreferrer'
 						class='min-w-[10rem] group flex-[2] inline-flex items-center justify-center px-6 py-2.5 bg-purple-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-purple-dark-active active:bg-purple-darker gap-2'
 					>
-						<span class='relative z-10 text-nowrap group-hover:font-bold transition-all duration-300'>
+						<span class='relative z-10 text-nowrap group-hover:font-bold transition-all duration-300 '>
 							Ver Proyecto
 						</span>
 						<svg
-							class='w-4 h-4 text-purple-light transition-transform duration-300 ease-out group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
+							class='w-5 h-full text-purple-light transition-transform duration-300 ease-out group-hover:[transform:translateX(0.375rem)_scale(1.1)] '
 							viewBox='0 0 24 24'
 							fill='none'
 							stroke='currentColor'
@@ -124,7 +128,7 @@ const { project, projectIndex } = Astro.props as Props;
 				<!-- <span class='opacity-100 group-hover:opacity-0 transition-all duration-300'>Saber más</span> -->
 				<!-- <span class='absolute mr-7 font-bold opacity-0 group-hover:opacity-100 transition-all duration-300'>Saber más</span> -->
 				<svg
-					class='w-5 h-5 transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
+					class='w-5 h-full transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
 					viewBox='0 0 60 60'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
