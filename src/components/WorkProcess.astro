@@ -20,27 +20,28 @@ const pasos: WorkStep[] = [
 		icon: '/2_1.svg',
 	},
 	{
-		nombre: 'Ensamblaje de Módulos',
+		nombre: 'Montaje de Módulos',
 		descripcion:
 			'Construimos tu proyecto paso a paso, manteniendo una comunicación constante y adaptándonos a tus necesidades.',
 		icon: '/3_2.svg',
 	},
 	{
 		nombre: 'Lanzamiento Espacial',
-		descripcion: 'Ponemos en marcha tu proyecto, verificando cada detalle para asegurar un despegue exitoso.',
+		descripcion:
+			'Lanzamos tu proyecto al universo digital, asegurándonos de que cada componente esté listo para un despegue exitoso.',
 		icon: '/4_1.svg',
 	},
 	{
-		nombre: 'Control de Parámetros',
+		nombre: 'Control de Navegación',
 		descripcion:
-			'Supervisamos el rendimiento y realizamos los ajustes necesarios para asegurar un funcionamiento óptimo.',
+			'Monitorizamos la trayectoria de tu proyecto, realizando los ajustes necesarios para mantener un rendimiento óptimo.',
 		icon: '/5_2.svg',
 	},
 ];
 ---
 
 <section class='py-20 relative z-10'>
-	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-10'>Cómo Trabajamos</h2>
+	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-10'>Fases del Proyecto</h2>
 
 	<div class='flex flex-col mx-auto md:max-w-3xl md2:max-w-7xl px-6 lg:px-8'>
 		{pasos.map((paso, index) => <WorkProcessCard {...paso} index={index} isLast={index === pasos.length - 1} />)}

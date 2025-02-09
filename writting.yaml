@@ -1,0 +1,113 @@
+esto es lo que tenemos hasta ahora, me faltan algunas cosas y hay otras en duda entre varias opciones o que dice esto o esto, puede combinar o ajustar o crear o decirme cual borrar etc. dame motivos para tomar una desicion en cada duda o caso y tu recomendacion. recuerda que la tematica es espacial, pero no exagerado o confuso, no molesto para la lectura ni pesado, es todo para mi landing page de interup a nivel "empresa" aunque soy una sola persona freelancer que queria hacer una web para mi negocio un poco mas profesional y tematica, tambien si vez que hay partes en donde me paso con la tematica o donde seria recomendable cambiarlo o disminuirlo dime, lo mismo si hay partes que estan bien integradas con la tematica y no hace falta cambiarlas:
+
+
+  Hero:
+    title: "InterUp"
+    headline: "Impulsamos tu negocio"
+    subheadline1: "Descubre el potencial de tu negocio y explora nuevos horizontes"
+    cta: "Contáctanos"
+
+
+
+  Servicios (hecho):
+    title: "Explora Nuestros Servicios"
+    services:
+      - name: "Asesoría Estelar"
+        description: "Te guiamos en la transformación de tu negocio, explorando juntos las mejores oportunidades para alcanzar tus objetivos y maximizar tu potencial en el mundo digital."
+
+        cta: "Explorar más"
+
+      - name: "Desarrollo Universal"
+        description: "Construimos experiencias personalizadas que hacen despegar tu negocio, utilizando tecnologías modernas para desarrollar soluciones adaptadas a tus necesidades y objetivos."
+        cta: "Explorar más"
+
+      - name: "Mantenimiento Orbital"
+        description: "Mantenemos tu proyecto en órbita con actualizaciones constantes, optimizaciones de rendimiento y soporte técnico dedicado para garantizar su evolución continua."
+        cta: "Explorar más"
+
+  Proceso (hecho):
+    title: "Fases del Proyecto"
+
+  steps:
+
+  - nombre: Primer Contacto
+  - description: "Nos reunimos para conocer tus ideas y objetivos, entendiendo qué necesitas y cómo podemos ayudarte."
+
+  - nombre: Planificación de Misión
+  - description: "Trazamos un plan detallado, definiendo las etapas y recursos necesarios para hacer realidad tu proyecto."
+
+  - nombre: Montaje de Módulos
+  - description: "Construimos tu proyecto paso a paso, manteniendo una comunicación constante y adaptándonos a tus necesidades."
+
+  - nombre: "Despegue Espacial"
+    description: "Lanzamos tu proyecto al universo digital, asegurándonos de que cada componente esté listo para un lanzamiento exitoso."
+
+  - nombre: "Control de Navegación"
+    description: "Monitorizamos la trayectoria de tu proyecto, realizando los ajustes necesarios para mantener un rendimiento óptimo."
+
+
+
+  Por_que_InterUp (hecho):
+    title: "¿Por qué InterUp?"
+    description: "En el inmenso mundo digital, somos tu aliado estratégico. Combinamos innovación tecnológica con un enfoque personalizado y cercano para impulsar el crecimiento sostenible de tu negocio."
+    reasons:
+
+      - 1: Soluciones a Medida: Creamos soluciones personalizadas que se adaptan perfectamente a tus necesidades.
+
+
+      - 2: Comunicación Continua: 
+      Mantenemos un diálogo claro y constante durante cada etapa del proyecto, para que siempre estés informado.
+
+
+      - 3: Soporte Integral: Te acompañamos en todo el proceso, desde la concepción hasta el mantenimiento post-lanzamiento.
+
+
+      - 4: Innovación Constante: Implementamos las últimas tecnologías para mantener tu proyecto actualizado y seguro.
+
+
+  Contacto (hecho):
+    title: "¿Listo para despegar?"
+    form:
+      name_placeholder: "¿Cómo te llamas?"
+      message_placeholder: "Cuéntanos brevemente sobre tu proyecto"
+      cta: "Enviar mensaje"
+
+
+
+  FAQ (hecho):
+    title: "Preguntas Frecuentes"
+    questions:
+      - question: "¿Qué tipos de proyectos desarrollamos?"
+        answer: "Desarrollamos multiples tipos de soluciones que incluyen sitios web, aplicaciones interactivas, e-commerce y plataformas a medida, adaptándonos a las necesidades específicas de cada cliente."
+
+      - question: "¿Cuánto tiempo toma desarrollar un proyecto?"
+        answer: "Nuestros tiempos varían según la complejidad y caracteristicas de cada proyecto. Un sitio web sencillo puede tomar unas pocas semanas, mientras que uno más complejo puede requerir varios meses."
+
+
+      - question: "¿Ofrecemos soporte post-lanzamiento?"
+        answer: "Sí, brindamos soporte continuo y mantenimiento para asegurar que tu proyecto siga funcionando de manera óptima y se mantenga actualizado."
+
+      - question: "¿Qué tecnologías utilizamos?"
+        answer: "Trabajamos con tecnologías modernas y otras herramientas actuales, seleccionando siempre las mas adecuadas para cada proyecto."
+
+      - question: "¿Cuál es nuestro proceso de trabajo?"
+        answer: "Nuestro proceso de trabajo es transparente y colaborativo. Comenzamos con una reunión inicial para entender tus necesidades y definir un plan de acción. Luego, trabajamos en etapas sucesivas, manteniendo una comunicación constante y ajustando el proyecto según sea necesario."
+
+
+  Footer (hecho):
+   
+    contact:
+      email: "contacto@interup.dev"
+      phone: "+54 9 11 3333 3333"
+      location: "Buenos Aires, Argentina"
+
+    social:
+      - platform: "LinkedIn"
+        url: "#"
+      - platform: "Instagram"
+        url: "#"
+      - platform: "X"
+        url: "#"
+
+
+

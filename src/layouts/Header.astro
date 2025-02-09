@@ -1,7 +1,8 @@
 ---
 const menuItems = [
-	{ href: '/', text: 'Inicio' },
 	{ href: '/servicios', text: 'Servicios' },
+	{ href: '/proceso', text: 'Cómo trabajamos' },
+	{ href: '/proyectos', text: 'Proyectos' },
 	{ href: '/contacto', text: 'Contacto' },
 ];
 ---
@@ -17,7 +18,7 @@ const menuItems = [
 		</a>
 
 		<!-- Menú escritorio -->
-		<ul class='hidden md:flex items-center gap-8'>
+		<ul class='hidden md:flex items-center gap-4'>
 			{
 				menuItems.map((item) => (
 					<li>
@@ -55,7 +56,7 @@ const menuItems = [
 	<!-- Menú móvil -->
 	<div
 		id='mobile-menu'
-		class='md:hidden fixed w-56 h-[calc(100lvh-4rem)] top-16 right-0 flex flex-col p-8 bg-purple-0 transition-transform duration-300 ease-in-out transform translate-x-full'
+		class='md:hidden fixed w-64 h-[calc(100lvh-4rem)] top-16 right-0 flex flex-col p-4 bg-purple-0 transition-transform duration-300 ease-in-out transform translate-x-full'
 	>
 		<ul class='flex flex-col gap-8'>
 			{

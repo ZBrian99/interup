@@ -6,45 +6,35 @@ interface Question {
 
 const faqs: Question[] = [
 	{
+		question: '¿Qué tipos de proyectos desarrollamos?',
+		answer:
+			'Desarrollamos multiples tipos de soluciones que incluyen sitios web, aplicaciones interactivas, e-commerce y plataformas a medida, adaptándonos a las necesidades específicas de cada cliente.',
+	},
+	{
 		question: '¿Cuánto tiempo toma desarrollar un proyecto?',
 		answer:
-			'El tiempo de desarrollo varía según la complejidad del proyecto. Típicamente, un proyecto pequeño puede tomar 4-6 semanas, mientras que proyectos más grandes pueden llevar 3-6 meses.',
+			'Nuestros tiempos varían según la complejidad y caracteristicas de cada proyecto. Un sitio web sencillo puede tomar unas pocas semanas, mientras que uno más complejo puede requerir varios meses.',
 	},
 	{
-		question: '¿Qué tecnologías utilizan?',
+		question: '¿Ofrecemos soporte post-lanzamiento?',
 		answer:
-			'Trabajamos con las últimas tecnologías del mercado, incluyendo React, Node.js, TypeScript, y otras herramientas modernas según las necesidades específicas de cada proyecto.',
+			'Sí, brindamos soporte continuo y mantenimiento para asegurar que tu proyecto siga funcionando de manera óptima y se mantenga actualizado.',
 	},
 	{
-		question: '¿Ofrecen mantenimiento post-desarrollo?',
+		question: '¿Qué tecnologías utilizamos?',
 		answer:
-			'Sí, ofrecemos servicios de mantenimiento y soporte continuo para asegurar que tu solución siga funcionando de manera óptima.',
+			'Trabajamos con tecnologías modernas y otras herramientas actuales, seleccionando siempre las mas adecuadas para cada proyecto.',
 	},
 	{
-		question: '¿Cómo garantizan la calidad del código?',
+		question: '¿Cuál es nuestro proceso de trabajo?',
 		answer:
-			'Implementamos prácticas de código limpio, realizamos pruebas automatizadas y seguimos estrictos estándares de calidad en todo nuestro proceso de desarrollo.',
-	},
-	{
-		question: '¿Cuál es su proceso de trabajo?',
-		answer:
-			'Seguimos una metodología ágil que incluye fases de planificación, diseño, desarrollo, pruebas y despliegue. Mantenemos una comunicación constante con el cliente durante todo el proceso.',
-	},
-	{
-		question: '¿Ofrecen servicios de consultoría?',
-		answer:
-			'Sí, proporcionamos servicios de consultoría técnica para ayudarte a definir la mejor estrategia y stack tecnológico para tu proyecto, basándonos en tus necesidades específicas.',
-	},
-	{
-		question: '¿Cómo manejan la seguridad de los proyectos?',
-		answer:
-			'Implementamos las mejores prácticas de seguridad en todos nuestros desarrollos, incluyendo encriptación de datos, autenticación segura y protección contra vulnerabilidades comunes.',
-	},
+			'Nuestro proceso de trabajo es transparente y colaborativo. Comenzamos con una reunión inicial para entender tus necesidades y definir un plan de acción. Luego, trabajamos en etapas sucesivas, manteniendo una comunicación constante y ajustando el proyecto según sea necesario.',
+	}
 ];
 ---
 
 <section class='py-20 bg-purple-1'>
-	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16'>FAQ's</h2>
+	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16'>Preguntas Frecuentes</h2>
 
 	<div class='faq-container flex flex-col gap-4 mx-auto max-w-4xl px-6 lg:px-8'>
 		{

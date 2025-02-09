@@ -20,7 +20,9 @@ const { title, description, icon, link, index } = Astro.props;
 	</div>
 
 	<div class='flex flex-col gap-3'>
-		<h3 class='text-white group-hover/card:text-green-normal transition-colors duration-300 text-xl font-bold'>{title}</h3>
+		<h3 class='text-white group-hover/card:text-green-normal transition-colors duration-300 text-xl font-bold'>
+			{title}
+		</h3>
 		<p class='text-purple-light group-hover/card:text-white transition-colors duration-300 text-base leading-relaxed'>
 			{description}
 		</p>
@@ -32,7 +34,7 @@ const { title, description, icon, link, index } = Astro.props;
 			 text-purple-darker px-6 py-2.5
 			`}
 	>
-		<span class='group-hover:font-bold transition-all duration-300'>Saber más</span>
+		<span class='group-hover:font-bold transition-all duration-300'>Explorar más</span>
 		<svg
 			class='w-5 h-full transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
 			viewBox='0 0 60 60'
