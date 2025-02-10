@@ -1,64 +1,12 @@
 ---
-interface ProjectLink {
-	url: string;
-	label: string;
-	icon?: 'portal' | 'admin' | 'register';
-}
-
-interface Project {
-	title: string;
-	description: string;
-	images: string[];
-	links?: ProjectLink[];
-}
-
+import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard.astro';
 
-const projects: Project[] = [
-	{
-		title: 'Gestión de Cursos',
-		description:
-			'Plataforma que automatiza la gestión de cursos, aumentando la eficiencia operativa y mejorando la experiencia del cliente.',
-		images: [
-			'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400',
-			'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800',
-			'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200',
-		],
-		links: [
-			{ url: '#', label: 'Portal de Alumnos', icon: 'portal' },
-			{ url: '#', label: 'Panel Administrativo', icon: 'admin' },
-			{ url: '#', label: 'Registro de Referidos', icon: 'register' },
-		],
-	},
-	{
-		title: 'Control de Acceso Gym',
-		description:
-			'Sistema que moderniza la gestión del gimnasio, mejorando la experiencia del cliente y simplificando las operaciones diarias.',
-		images: [
-			'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200',
-			'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200',
-		],
-		links: [
-			{ url: '#', label: 'Portal de Clientes' },
-			{ url: '#', label: 'Panel de Control' },
-		],
-	},
-	{
-		title: 'Landing Page Pizzería',
-		description:
-			'Sitio web moderno que aumenta la presencia online y facilita la captación de pedidos, mejorando las ventas digitales.',
-		images: [
-			'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&h=600',
-			'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1200&h=600',
-			'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&h=600',
-		],
-		links: [{ url: '#', label: 'Ver Sitio Web' }],
-	},
-];
+
 ---
 
-<section class='py-20 flex items-center justify-center relative'>
-	<div class='mx-auto max-w-7xl px-6 lg:px-8'>
+<section class='py-20 flex items-center justify-center relative z-20' id='proyectos'>
+	<div class='mx-auto max-w-7xl px-6 lg:px-8 z-10'>
 		<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-10'>Bitácora de Proyectos</h2>
 
 		<div
@@ -66,10 +14,11 @@ const projects: Project[] = [
 		>
 			{projects.map((project, index) => <ProjectCard project={project} projectIndex={index} />)}
 		</div>
-	</div><img
+	</div>
+	<img
 		src='/curva3.svg'
 		alt='Fondo decorativo'
-		class='absolute w-full h-[30%] object-cover object-left lg:object-fill bottom-[-8%] lg:h-[50%] lg:bottom-[-18%]'
+		class='absolute w-full h-[30%] object-cover object-left lg:object-fill bottom-[-8%] lg:h-[50%] lg:bottom-[-18%] select-none'
 	/>
 </section>
 

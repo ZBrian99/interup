@@ -3,11 +3,15 @@ interface Props {
 	title: string;
 	description: string;
 	icon: string;
-	link: string;
 	index: number;
 }
 
-const { title, description, icon, link, index } = Astro.props;
+const { title, description, icon, index } = Astro.props;
+
+const phoneNumber = '542236698045';
+
+const message = `¡Hola! Me gustaría obtener más información sobre el servicio "${title}"`;
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 ---
 
 <article
@@ -16,7 +20,7 @@ const { title, description, icon, link, index } = Astro.props;
 	<div
 		class={`w-28 h-28 bg-purple-2 rounded-full flex items-center justify-center p-2 group-hover/card:scale-110 transition-transform duration-300`}
 	>
-		<img src={icon} alt={`Icono de ${title}`} class='w-full h-full object-cover object-center' />
+		<img src={icon} alt={`Icono de ${title}`} class='w-full h-full object-cover object-center select-none' />
 	</div>
 
 	<div class='flex flex-col gap-3'>
@@ -29,7 +33,10 @@ const { title, description, icon, link, index } = Astro.props;
 	</div>
 
 	<a
-		href={link}
+		href={whatsappUrl}
+		target='_blank'
+		rel='noopener noreferrer'
+		aria-label={`Saber más información por WhatsApp`}
 		class={`min-w-[10.5rem] inline-flex items-center justify-center bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active rounded-full font-medium transition-colors duration-300 mt-auto gap-2 group 
 			 text-purple-darker px-6 py-2.5
 			`}

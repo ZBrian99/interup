@@ -1,6 +1,6 @@
 ---
 const phoneNumber = '542236698045';
-const message = 'Hola! Me gustaría obtener más información sobre sus servicios.';
+const message = '¡Hola! Me gustaría obtener más información sobre sus servicios.';
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 ---
 
@@ -41,6 +41,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 			href={whatsappUrl}
 			target='_blank'
 			rel='noopener noreferrer'
+			aria-label='Contáctanos por WhatsApp'
 			class='min-w-[11.5rem] inline-flex items-center justify-center px-6 py-2.5 bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active text-purple-darker rounded-full font-medium transition-colors duration-300 max-w-max mx-auto mt-4 gap-2 group'
 		>
 			<span class='group-hover:font-bold transition-all duration-300'>Contáctanos</span>

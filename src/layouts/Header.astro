@@ -1,9 +1,9 @@
 ---
 const menuItems = [
-	{ href: '/servicios', text: 'Servicios' },
-	{ href: '/proceso', text: 'Cómo trabajamos' },
-	{ href: '/proyectos', text: 'Proyectos' },
-	{ href: '/contacto', text: 'Contacto' },
+	{ href: '#servicios', text: 'Servicios' },
+	{ href: '#proceso', text: 'Cómo trabajamos' },
+	{ href: '#proyectos', text: 'Proyectos' },
+	{ href: '#contacto', text: 'Contacto' },
 ];
 ---
 
@@ -12,7 +12,7 @@ const menuItems = [
 >
 	<nav class='max-w-7xl w-full mx-auto flex items-center justify-between'>
 		<!-- Logo -->
-		<a href='#inicio' class='flex gap-4'>
+		<a href='#' class='flex gap-4'>
 			<!-- <img src='/logo.svg' alt='InterUp Logo' class='h-9 w-9' /> -->
 			<h6 class='text-xl font-sans font-bold text-green-normal'>InterUp</h6>
 		</a>
@@ -33,11 +33,12 @@ const menuItems = [
 			}
 		</ul>
 
-		<!-- Botón mobile -->
+		<!-- Botón mobile - Solo se renderiza en mobile -->
 		<button
 			id='mobile-menu-button'
 			class='md:hidden rounded-full p-2 transition-all duration-300 relative z-50 ml-auto'
 			aria-label='Menú'
+			aria-expanded='false'
 		>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
@@ -53,7 +54,7 @@ const menuItems = [
 		</button>
 	</nav>
 
-	<!-- Menú móvil -->
+	<!-- Menú móvil - Solo se renderiza en mobile -->
 	<div
 		id='mobile-menu'
 		class='md:hidden fixed w-64 h-[calc(100lvh-4rem)] top-16 right-0 flex flex-col p-4 bg-purple-0 transition-transform duration-300 ease-in-out transform translate-x-full'
@@ -78,6 +79,9 @@ const menuItems = [
 
 <script>
 	function initMobileMenu() {
+		// Solo inicializamos si estamos en mobile
+		if (window.innerWidth >= 768) return;
+
 		const button = document.getElementById('mobile-menu-button');
 		const menu = document.getElementById('mobile-menu');
 		const menuIcon = document.getElementById('menu-icon');
@@ -110,6 +114,7 @@ const menuItems = [
 			}
 		}
 
+		// Un solo listener para manejar todos los clicks
 		document.addEventListener('click', (event) => {
 			const target = event.target as Node;
 
@@ -119,23 +124,42 @@ const menuItems = [
 				return;
 			}
 
-			if (isMenuOpen() && !elements.header.contains(target)) {
-				toggleMenu(false);
+			if (isMenuOpen()) {
+				if (target instanceof Element && target.closest('#mobile-menu a')) {
+					toggleMenu(false);
+					return;
+				}
+
+				if (!elements.header.contains(target)) {
+					toggleMenu(false);
+				}
 			}
 		});
 
+		// Manejador de resize simplificado
+		let resizeTimeout: number;
 		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 768 && isMenuOpen()) {
-				toggleMenu(false);
-			}
+			clearTimeout(resizeTimeout);
+			resizeTimeout = window.setTimeout(() => {
+				if (window.innerWidth >= 768 && isMenuOpen()) {
+					toggleMenu(false);
+				}
+			}, 100);
 		});
 	}
 
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initMobileMenu);
-	} else {
-		initMobileMenu();
+	// Solo inicializamos en mobile
+	if (window.innerWidth < 768) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initMobileMenu);
+		} else {
+			initMobileMenu();
+		}
 	}
 
-	document.addEventListener('astro:page-load', initMobileMenu);
+	document.addEventListener('astro:page-load', () => {
+		if (window.innerWidth < 768) {
+			initMobileMenu();
+		}
+	});
 </script>

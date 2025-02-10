@@ -33,8 +33,8 @@ const faqs: Question[] = [
 ];
 ---
 
-<section class='py-20 bg-purple-1'>
-	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16'>Preguntas Frecuentes</h2>
+<section class='py-20 relative z-30'>
+	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-20'>Preguntas Frecuentes</h2>
 
 	<div class='faq-container flex flex-col gap-4 mx-auto max-w-4xl px-6 lg:px-8'>
 		{
@@ -45,7 +45,7 @@ const faqs: Question[] = [
 						<img
 							src='/arrow-down.svg'
 							alt='Expandir'
-							class='w-5 h-5 transition-transform duration-300 [.active_&]:rotate-180 '
+							class='w-5 h-5 transition-transform duration-300 [.active_&]:rotate-180 select-none'
 						/>
 					</div>
 					<div class='faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out'>

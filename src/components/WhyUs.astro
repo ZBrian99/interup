@@ -2,41 +2,47 @@
 const phoneNumber = '542236698045';
 ---
 
-<section class='py-20 relative z-10'>
+<section class='py-20 relative z-20'>
 	<div class='mx-auto max-w-4xl lg:max-w-7xl px-6 lg:px-8'>
-		<div
-			class='flex flex-col lg:flex-row items-stretch gap-40 lg:gap-8 lg:bg-purple-normal rounded-2xl lg:shadow-lg lg:p-8'
-		>
+		<div class='flex flex-col lg:flex-row items-stretch lg:gap-8 lg:bg-purple-normal rounded-2xl lg:shadow-lg lg:p-8'>
 			{/* Texto - Por qué elegirnos */}
 			<div
 				class='flex flex-col w-full lg:w-1/2 bg-purple-normal lg:bg-none rounded-2xl shadow-lg lg:shadow-none p-6 lg:p-0'
 			>
 				<h2 class='text-2xl md:text-4xl font-bold text-green-normal'>¿Por qué InterUp?</h2>
-				<p class='text-white mt-4 lg:mt-6 text-base lg:text-lg leading-relaxed'>
-					Somos tu aliado estratégico en el mundo digital, combinando innovación tecnológica con un enfoque
-					personalizado para impulsar tu negocio.
+				<p class='text-white mt-4 lg:mt-6 text-base lg:text-base leading-relaxed'>
+					En el inmenso mundo digital, somos tu aliado estratégico. Combinamos innovación tecnológica con un enfoque
+					personalizado y cercano para impulsar el crecimiento sostenible de tu negocio.
 				</p>
 				<ul class='mt-6 lg:mt-8 space-y-4'>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
+						<span
+							class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center select-none'
+						>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Creamos soluciones que se adaptan a tus necesidades.</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
+						<span
+							class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center select-none'
+						>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Mantenemos comunicación constante durante todo el proyecto.</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
+						<span
+							class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center select-none'
+						>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Te acompañamos desde la concepción hasta el mantenimiento.</p>
 					</li>
 					<li class='flex items-center gap-4'>
-						<span class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center'>
+						<span
+							class='flex-shrink-0 w-6 h-6 rounded-full bg-purple-dark-hover flex items-center justify-center select-none'
+						>
 							<span class='text-green-normal text-sm'>✓</span>
 						</span>
 						<p class='text-purple-light text-sm'>Implementamos tecnologías modernas para tu seguridad.</p>
@@ -45,7 +51,7 @@ const phoneNumber = '542236698045';
 			</div>
 			{/* Formulario de contacto */}
 			<div
-				class='w-full lg:w-1/2 mt-8 lg:mt-0 flex flex-col justify-center shadow-lg bg-purple-normal lg:bg-purple-dark-hover p-6 rounded-2xl'
+				class='w-full lg:w-1/2 lg:mt-0 flex flex-col justify-center shadow-lg bg-purple-normal lg:bg-purple-dark-hover p-6 rounded-2xl mt-48 relative'
 			>
 				<h3 class='text-2xl md:text-4xl lg:text-2xl font-serif font-bold mb-6 text-green-normal'>
 					¿Hablamos de tu proyecto?
@@ -91,20 +97,21 @@ const phoneNumber = '542236698045';
 						</svg>
 					</button>
 				</form>
+				<span class='absolute -top-24 md:-top-32 left-0 opacity-0' id='contacto'></span>
 			</div>
 		</div>
 	</div>
-	<img src='/astronauta.svg' alt='Fondo decorativo' class='absolute -top-10 left-0 -z-10' />
+	<img src='/astronauta.svg' alt='Fondo decorativo' class='absolute -top-10 left-0 -z-10 select-none' />
 
 	<img
 		src='/curva4.svg'
 		alt='Fondo decorativo'
-		class='absolute w-full h-[40%] object-cover scale-x-[-1] bottom-[31%] -z-20 lg:hidden'
+		class='absolute w-full h-[40%] object-cover scale-x-[-1] bottom-[31%] -z-20 lg:hidden select-none'
 	/>
 	<img
 		src='/curva5.svg'
 		alt='Fondo decorativo'
-		class='absolute w-full h-[40%] object-cover lg:object-fill scale-x-[-1] bottom-[-18%] lg:h-[50%] lg:bottom-[-25%] -z-20'
+		class='absolute w-full h-[40%] object-cover lg:object-fill scale-x-[-1] bottom-[-18%] lg:h-[50%] lg:bottom-[-25%] -z-20 select-none'
 	/>
 </section>
 
@@ -134,6 +141,6 @@ const phoneNumber = '542236698045';
 		}
 
 		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-		window.open(whatsappUrl, '_blank');
+		window.open(whatsappUrl, '_blank', 'noopener noreferrer');
 	});
 </script>
