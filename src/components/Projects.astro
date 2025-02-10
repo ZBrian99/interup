@@ -1,0 +1,135 @@
+---
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+
+
+---
+
+<section class='py-20 flex items-center justify-center relative z-20' id='proyectos'>
+	<div class='mx-auto max-w-7xl px-6 lg:px-8 z-10'>
+		<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-10'>Bitácora de Proyectos</h2>
+
+		<div
+			class='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-stretch gap-8 z-10'
+		>
+			{projects.map((project, index) => <ProjectCard project={project} projectIndex={index} />)}
+		</div>
+	</div>
+	<img
+		src='/curva3.svg'
+		alt='Fondo decorativo'
+		class='absolute w-full h-[30%] object-cover object-left lg:object-fill bottom-[-8%] lg:h-[50%] lg:bottom-[-18%] select-none'
+	/>
+</section>
+
+<script>
+	interface CarouselElements {
+		container: HTMLElement;
+		slides: HTMLElement[];
+		dots: HTMLElement[];
+		prevBtn: HTMLElement;
+		nextBtn: HTMLElement;
+	}
+
+	class Carousel {
+		private elements: CarouselElements;
+		private currentSlide: number = 0;
+		private interval: ReturnType<typeof setInterval> | undefined = undefined;
+		private totalSlides: number;
+
+		constructor(container: HTMLElement) {
+			const prevBtn = container.querySelector('.carousel-prev');
+			const nextBtn = container.querySelector('.carousel-next');
+
+			if (!prevBtn || !nextBtn) {
+				throw new Error('Carousel buttons not found');
+			}
+
+			this.elements = {
+				container,
+				slides: Array.from(container.querySelectorAll('.carousel-slide')) as HTMLElement[],
+				dots: Array.from(container.querySelectorAll('.carousel-dots button')) as HTMLElement[],
+				prevBtn: prevBtn as HTMLElement,
+				nextBtn: nextBtn as HTMLElement,
+			};
+			this.totalSlides = this.elements.slides.length;
+
+			this.init();
+		}
+
+		private init(): void {
+			if (this.totalSlides > 0) {
+				this.showSlide(0);
+				this.setupEventListeners();
+				this.startAutoplay();
+			}
+		}
+
+		private showSlide(index: number): void {
+			this.elements.slides.forEach((slide) => {
+				slide.style.opacity = '0';
+				slide.style.pointerEvents = 'none';
+			});
+
+			this.elements.dots.forEach((dot) => {
+				dot.classList.remove('bg-white/80');
+				dot.classList.add('bg-white/50');
+			});
+
+			const normalizedIndex = ((index % this.totalSlides) + this.totalSlides) % this.totalSlides;
+
+			this.elements.slides[normalizedIndex].style.opacity = '1';
+			this.elements.slides[normalizedIndex].style.pointerEvents = 'auto';
+			this.elements.dots[normalizedIndex].classList.remove('bg-white/50');
+			this.elements.dots[normalizedIndex].classList.add('bg-white/80');
+
+			this.currentSlide = normalizedIndex;
+		}
+
+		private setupEventListeners(): void {
+			this.elements.prevBtn.addEventListener('click', () => this.navigate(-1));
+			this.elements.nextBtn.addEventListener('click', () => this.navigate(1));
+
+			this.elements.dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => this.showSlide(index));
+			});
+
+			this.elements.container.addEventListener('mouseenter', () => this.stopAutoplay());
+			this.elements.container.addEventListener('mouseleave', () => this.startAutoplay());
+		}
+
+		private navigate(direction: number): void {
+			this.showSlide(this.currentSlide + direction);
+			this.stopAutoplay();
+			this.startAutoplay();
+		}
+
+		private startAutoplay(): void {
+			this.stopAutoplay();
+			this.interval = setInterval(() => this.navigate(1), 5000);
+		}
+
+		private stopAutoplay(): void {
+			if (this.interval) {
+				clearInterval(this.interval);
+			}
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('[data-carousel]').forEach((container) => {
+			try {
+				new Carousel(container as HTMLElement);
+			} catch (error) {
+				console.error('Error initializing carousel:', error);
+			}
+		});
+	});
+</script>
+
+<style>
+	.carousel-slide {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+</style>

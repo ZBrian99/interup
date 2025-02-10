@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+     <!-- Estela del cohete -->
+    <path d="M20 33L24 42L28 33"
+          stroke="url(#paint3_linear)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+       <!-- Aletas laterales -->
+    <path d="M16 24L12 28L16 27"
+          stroke="url(#paint2_linear)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+    
+    <path d="M32 24L36 28L32 27"
+          stroke="url(#paint2_linear)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Cuerpo principal del cohete -->
+    <path d="M24 8C24 8 16 16 16 28L24 36L32 28C32 16 24 8 24 8Z"
+          stroke="url(#paint0_linear)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+    
+    <!-- Ventana del cohete -->
+    <circle cx="24" cy="20" r="3" fill="url(#paint1_linear)"/>
+    
+    
+    <!-- Estrellas decorativas -->
+    <circle cx="14" cy="14" r="1" fill="#78F493"/>
+    <circle cx="34" cy="14" r="1" fill="#78F493"/>
+    <circle cx="24" cy="30" r="1" fill="#3F34A3"/>
+    
+    <!-- Definición de gradientes -->
+    <defs>
+        <linearGradient id="paint0_linear" x1="24" y1="8" x2="24" y2="36" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+        
+        <linearGradient id="paint1_linear" x1="24" y1="18" x2="24" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+        
+        <linearGradient id="paint2_linear" x1="12" y1="24" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+        
+        <linearGradient id="paint3_linear" x1="24" y1="36" x2="24" y2="42" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#78F493"/>
+            <stop offset="1" stop-color="#3F34A3"/>
+        </linearGradient>
+    </defs>
+</svg>

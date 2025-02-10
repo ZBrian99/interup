@@ -1,0 +1,59 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	icon: string;
+	index: number;
+}
+
+const { title, description, icon, index } = Astro.props;
+
+const phoneNumber = '542236698045';
+
+const message = `¡Hola! Me gustaría obtener más información sobre el servicio "${title}"`;
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<article
+	class={`max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full bg-purple-normal rounded-2xl flex flex-col items-center text-center px-6 py-8 gap-6 shadow-lg group/card border border-[transparent] hover:border-green-normal transition-colors_transform duration-300 z-10 hover:translate-y-[-.5rem] ease-in-out hover:shadow-xl`}
+>
+	<div
+		class={`w-28 h-28 bg-purple-2 rounded-full flex items-center justify-center p-2 group-hover/card:scale-110 transition-transform duration-300`}
+	>
+		<img src={icon} alt={`Icono de ${title}`} class='w-full h-full object-cover object-center select-none' />
+	</div>
+
+	<div class='flex flex-col gap-3'>
+		<h3 class='text-white group-hover/card:text-green-normal transition-colors duration-300 text-xl font-bold'>
+			{title}
+		</h3>
+		<p class='text-purple-light group-hover/card:text-white transition-colors duration-300 text-base leading-relaxed'>
+			{description}
+		</p>
+	</div>
+
+	<a
+		href={whatsappUrl}
+		target='_blank'
+		rel='noopener noreferrer'
+		aria-label={`Saber más información por WhatsApp`}
+		class={`min-w-[10.5rem] inline-flex items-center justify-center bg-green-normal hover:bg-green-normal-hover active:bg-green-normal-active rounded-full font-medium transition-colors duration-300 mt-auto gap-2 group 
+			 text-purple-darker px-6 py-2.5
+			`}
+	>
+		<span class='group-hover:font-bold transition-all duration-300'>Explorar más</span>
+		<svg
+			class='w-5 h-full transition-transform duration-300 group-hover:[transform:translateX(0.375rem)_scale(1.1)]'
+			viewBox='0 0 60 60'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'
+		>
+			<path
+				d='M0.250781 29.6316C0.249141 34.8542 1.62422 39.9526 4.23844 44.4465L0 59.8016L15.837 55.6814C20.2005 58.0421 25.1135 59.2867 30.1127 59.2886H30.1256C46.59 59.2886 59.993 45.9937 60 29.6553C60.0028 21.7372 56.8978 14.2914 51.2578 8.69023C45.6171 3.08977 38.1171 0.00325581 30.1256 0C13.6584 0 0.257344 13.293 0.250781 29.6316ZM9.68227 43.6726L9.09094 42.7412C6.60516 38.8193 5.29312 34.2872 5.295 29.6335C5.30016 16.0533 16.4386 5.00465 30.135 5.00465C36.7678 5.00744 43.0013 7.57302 47.6897 12.2279C52.3779 16.8833 54.9577 23.0716 54.956 29.6535C54.9499 43.2337 43.8112 54.2837 30.1256 54.2837H30.1158C25.6596 54.2814 21.2892 53.0939 17.4778 50.85L16.5708 50.3163L7.17281 52.7612L9.68227 43.6726Z'
+				fill='currentColor'></path>
+			<path
+				d='M22.659 17.2437C22.0997 16.0105 21.5112 15.9856 20.9794 15.9639C20.544 15.9453 20.0461 15.9467 19.5488 15.9467C19.051 15.9467 18.2422 16.1326 17.5585 16.8733C16.8741 17.6146 14.9457 19.4063 14.9457 23.0502C14.9457 26.6942 17.6206 30.216 17.9935 30.7107C18.3669 31.2044 23.1575 38.9216 30.7447 41.8905C37.0503 44.3577 38.3335 43.867 39.702 43.7432C41.0708 43.62 44.1186 41.9521 44.7404 40.2226C45.3626 38.4933 45.3626 37.0109 45.1761 36.7012C44.9895 36.3926 44.4917 36.2072 43.7452 35.837C42.9987 35.4667 39.3286 33.6746 38.6445 33.4274C37.9601 33.1805 37.4626 33.0572 36.9647 33.7988C36.4669 34.5393 35.0375 36.2072 34.6018 36.7012C34.1665 37.1963 33.7308 37.2579 32.9846 36.8874C32.2376 36.5158 29.8336 35.7346 26.9815 33.2116C24.7625 31.2484 23.2643 28.8239 22.8289 28.0823C22.3934 27.3419 22.7822 26.9405 23.1565 26.5714C23.4919 26.2395 23.9033 25.7065 24.2769 25.2742C24.649 24.8416 24.7733 24.533 25.0222 24.0391C25.2713 23.5446 25.1466 23.1121 24.9603 22.7416C24.7733 22.3712 23.3227 18.7081 22.659 17.2437Z'
+				fill='currentColor'></path>
+		</svg>
+	</a>
+</article>

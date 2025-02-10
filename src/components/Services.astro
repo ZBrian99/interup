@@ -1,0 +1,44 @@
+---
+import ServiceCard from './ServiceCard.astro';
+const services = [
+	{
+		title: 'Asesoría Estelar',
+		description:
+			'Te guiamos en la transformación de tu negocio, explorando juntos las mejores oportunidades para alcanzar tus objetivos.',
+		icon: '/service1 copy.svg',
+		color: 'tag-blue',
+	},
+	{
+		title: 'Desarrollo Universal',
+		description:
+			'Construimos experiencias personalizadas, utilizando tecnologías modernas y adaptándonos a tus necesidades.',
+		icon: '/service2 copy.svg',
+		color: 'tag-pink',
+	},
+	{
+		title: 'Mantenimiento Orbital',
+		description:
+			'Mantenemos tu proyecto en órbita, añadiendo actualizaciones constantes para garantizar un funcionamiento óptimo.',
+		icon: '/service3 copy.svg',
+		color: 'tag-orange',
+	},
+];
+---
+
+<section class='py-20 flex items-center justify-center relative' id='servicios'>
+	<div class='mx-auto max-w-7xl px-6 lg:px-8 z-10'>
+		<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16'>Nuestros Servicios</h2>
+
+		<div
+			class='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-stretch gap-8'
+		>
+			{services.map((service, index) => <ServiceCard {...service} index={index} />)}
+		</div>
+	</div>
+
+	<img
+		src='/curva1.svg'
+		alt='Fondo decorativo'
+		class='absolute w-full h-[50%] object-cover lg:object-fill bottom-[-12%] lg:h-full lg:bottom-[-20%] select-none'
+	/>
+</section>

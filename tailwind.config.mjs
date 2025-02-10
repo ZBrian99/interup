@@ -13,9 +13,9 @@ export default {
 					active: '#C3C0E2',
 				},
 				normal: {
-					DEFAULT: '#3F34A3',
-					hover: '#392F93',
-					active: '#322A82',
+					DEFAULT: '#2D2980 ',
+					hover: '#352C88',
+					active: '#2F277A',
 				},
 				dark: {
 					DEFAULT: '#2F277A',
@@ -37,8 +37,8 @@ export default {
 				},
 				normal: {
 					DEFAULT: '#78F493',
-					hover: '#6CDC84',
-					active: '#5fc476',
+					hover: '#5FE87C',
+					active: '#4AD367',
 				},
 				dark: {
 					DEFAULT: '#5AB76E',
@@ -89,6 +89,7 @@ export default {
 			xs: '375px', // Móviles pequeños
 			sm: '480px', // Móviles grandes
 			md: '768px', // Tablets
+			md2: '900px', // Tablets grandes
 			lg: '1024px', // Laptops/Desktops pequeños
 			xl: '1280px', // Desktops
 			'2xl': '1440px', // Pantallas grandes
@@ -106,7 +107,7 @@ export default {
 			animation: {
 				'fade-in': 'fadeIn 1s ease-in-out forwards 0.5s',
 				'fade-out': 'fadeOut 0.5s ease-in-out',
-				'slide-up': 'slideUpMobile 1s ease-out forwards',
+				'slide-up': 'slideUp 1s ease-out forwards',
 				'slide-up-lg': 'slideUpDesktop 1s ease-out forwards',
 				'slide-down': 'slideDown 1.5s ease-out',
 				'slide-left': 'slideLeft 1s ease-in-out forwards 1.25s',
@@ -116,10 +117,12 @@ export default {
 				'spin-slow': 'spin 3s linear infinite',
 				'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
 				scale: 'scale 0.3s ease-in-out',
+				'float-left': 'floatLeft 6s ease-in-out infinite',
+				'float-right': 'floatRight 6s ease-in-out infinite',
 				shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
 				'pulse-large': 'largePulse 7s ease-in-out infinite 5s',
 				'fade-in-then-pulse':
-					'fadeIn 1s ease-in-out .5s forwards, largePulse 14s cubic-bezier(0.4, 0, 0.6, 1) infinite 10s',
+					'fadeIn 1s ease-in-out forwards 0.5s, scalePulse 20s ease-in-out infinite 5s, largePulse 20s ease-in-out infinite 5s',
 			},
 			keyframes: {
 				fadeIn: {
@@ -130,17 +133,21 @@ export default {
 					'0%': { opacity: '1' },
 					'100%': { opacity: '0' },
 				},
+				slideUp: {
+					'0%': { transform: 'translateY(30px)' },
+					'100%': { transform: 'translateY(0)' },
+				},
 				slideUpMobile: {
 					'0%': { transform: 'translateY(50px)' },
 					'100%': { transform: 'translateY(0)' },
 				},
 				slideUpDesktop: {
-					'0%': { transform: 'translateY(50px)', opacity: '0' },
-					'100%': { transform: 'translateY(0px)', opacity: '1' },
+					'0%': { transform: 'translateY(50px)' },
+					'100%': { transform: 'translateY(0px)' },
 				},
 				slideDown: {
-					'0%': { transform: 'translateY(-50px)', opacity: '0' },
-					'100%': { transform: 'translateY(0)', opacity: '1' },
+					'0%': { transform: 'translateY(-100px) scale(1.1)', opacity: '0' },
+					'100%': { transform: 'translateY(0) scale(1)', opacity: '.5' },
 				},
 				slideLeft: {
 					'0%': { transform: 'translateX(20px)', opacity: '0' },
@@ -160,18 +167,38 @@ export default {
 					'30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
 					'40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
 				},
+				floatLeft: {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1.05)',
+					},
+					'50%': {
+						transform: 'translate(-10px, 20px) ',
+					},
+				},
+				floatRight: {
+					'0%, 100%': {
+						transform: 'translate(0, 0)',
+					},
+					'50%': {
+						transform: 'translate(-10px, -20px) scale(1.05)',
+					},
+				},
+		
+				scalePulse: {
+					'0%': { transform: 'scale(1)' },
+					'3%': { transform: 'scale(1.15)' },
+					'6%': { transform: 'scale(1)' },
+					'100%': { transform: 'scale(1)' },
+				},
 				largePulse: {
-					'0%, 14%': {
-						boxShadow: '0 0 0 0 rgba(96, 214, 105, 0.6)',
-						// transform: 'scale(1)',
+					'0%': {
+						boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.4)',
 					},
-					'7%': {
-						boxShadow: '0 0 0 20px rgba(96, 214, 105, 0)',
-						// transform: 'scale(1.05)',
+					'6%': {
+						boxShadow: '0 0 0 30px rgba(37, 211, 102, 0)',
 					},
-					'14%, 100%': {
-						boxShadow: '0 0 0 0 rgba(96, 214, 105, 0)',
-						// transform: 'scale(1)',
+					'100%': {
+						boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)',
 					},
 				},
 			},
@@ -196,7 +223,6 @@ export default {
 				sm: '0 2px 4px rgba(0, 0, 0, 0.05)', // Sutil, para elementos hover
 				md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // Cards, elementos elevados
 				lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // Modales, elementos destacados
-
 			},
 		},
 	},

@@ -5,10 +5,11 @@
 @layer base {
 	html {
 		font-size: 100%;
+    scroll-behavior: smooth;
 	}
 
 	body {
-		@apply font-sans antialiased text-base;
+		@apply font-sans antialiased text-base overflow-x-hidden bg-purple-0 text-purple-light;
 	}
 
 	h1,
@@ -17,7 +18,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-sans font-medium;
+		@apply font-serif font-medium;
 	}
 
 	h1 {
@@ -35,6 +36,31 @@
 	h4 {
 		@apply text-lg md:text-xl leading-snug;
 	}
+
+	/* Scrollbar personalizada */
+	
+	/* Primero definimos los estilos para Webkit (Chrome, Safari, etc) */
+	::-webkit-scrollbar {
+		width: 0.375rem; /* 6px */
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-purple-0 rounded-full;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply bg-purple-normal rounded-full transition-colors duration-300 ease-in-out;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-purple-normal-hover;
+	}
+
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+
+
 }
 
 /* @layer components {

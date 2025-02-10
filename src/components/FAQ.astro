@@ -1,0 +1,95 @@
+---
+interface Question {
+	question: string;
+	answer: string;
+}
+
+const faqs: Question[] = [
+	{
+		question: '¿Qué tipos de proyectos desarrollamos?',
+		answer:
+			'Desarrollamos multiples tipos de soluciones que incluyen sitios web, aplicaciones interactivas, e-commerce y plataformas a medida, adaptándonos a las necesidades específicas de cada cliente.',
+	},
+	{
+		question: '¿Cuánto tiempo toma desarrollar un proyecto?',
+		answer:
+			'Nuestros tiempos varían según la complejidad y caracteristicas de cada proyecto. Un sitio web sencillo puede tomar unas pocas semanas, mientras que uno más complejo puede requerir varios meses.',
+	},
+	{
+		question: '¿Ofrecemos soporte post-lanzamiento?',
+		answer:
+			'Sí, brindamos soporte continuo y mantenimiento para asegurar que tu proyecto siga funcionando de manera óptima y se mantenga actualizado.',
+	},
+	{
+		question: '¿Qué tecnologías utilizamos?',
+		answer:
+			'Trabajamos con tecnologías modernas y otras herramientas actuales, seleccionando siempre las mas adecuadas para cada proyecto.',
+	},
+	{
+		question: '¿Cuál es nuestro proceso de trabajo?',
+		answer:
+			'Nuestro proceso de trabajo es transparente y colaborativo. Comenzamos con una reunión inicial para entender tus necesidades y definir un plan de acción. Luego, trabajamos en etapas sucesivas, manteniendo una comunicación constante y ajustando el proyecto según sea necesario.',
+	}
+];
+---
+
+<section class='py-20 relative z-30'>
+	<h2 class='text-2xl md:text-4xl font-bold text-green-normal text-center mb-16 z-20'>Preguntas Frecuentes</h2>
+
+	<div class='faq-container flex flex-col gap-4 mx-auto max-w-4xl px-6 lg:px-8'>
+		{
+			faqs.map((faq) => (
+				<div class='faq-item bg-purple-normal rounded-lg overflow-hidden cursor-pointer transition-all duration-300 shadow-lg text-white'>
+					<div class='w-full text-left p-4 flex justify-between items-center gap-4'>
+						<span class='font-medium flex-1 '>{faq.question}</span>
+						<img
+							src='/arrow-down.svg'
+							alt='Expandir'
+							class='w-5 h-5 transition-transform duration-300 [.active_&]:rotate-180 select-none'
+						/>
+					</div>
+					<div class='faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out'>
+						<div class='p-4  flex '>
+							<p class='flex-1 mr-8 '>{faq.answer}</p>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const faqContainer = document.querySelector('.faq-container');
+		if (!faqContainer) return;
+
+		faqContainer.addEventListener('click', (e) => {
+			const faqItem = e.target.closest('.faq-item');
+			if (!faqItem) return;
+
+			const answer = faqItem.querySelector('.faq-answer');
+			if (!answer) return;
+
+			const isActive = faqItem.classList.contains('active');
+
+			document.querySelectorAll('.faq-item.active').forEach((otherItem) => {
+				if (otherItem !== faqItem) {
+					otherItem.classList.remove('active');
+					const otherAnswer = otherItem.querySelector('.faq-answer');
+					if (otherAnswer) {
+						otherAnswer.style.maxHeight = '0';
+					}
+				}
+			});
+
+			if (!isActive) {
+				faqItem.classList.add('active');
+				answer.style.maxHeight = `${answer.scrollHeight}px`;
+			} else {
+				faqItem.classList.remove('active');
+				answer.style.maxHeight = '0';
+			}
+		});
+	});
+</script>
