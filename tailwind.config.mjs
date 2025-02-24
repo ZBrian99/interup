@@ -107,7 +107,7 @@ export default {
 			animation: {
 				'fade-in': 'fadeIn 1s ease-in-out forwards 0.5s',
 				'fade-out': 'fadeOut 0.5s ease-in-out',
-				'slide-up': 'slideUp 1s ease-out forwards',
+				'slide-up': 'slideUp 1s ease-out forwards 0.1s',
 				'slide-up-lg': 'slideUpDesktop 1s ease-out forwards',
 				'slide-down': 'slideDown 1.5s ease-out',
 				'slide-left': 'slideLeft 1s ease-in-out forwards 1.25s',
@@ -134,8 +134,8 @@ export default {
 					'100%': { opacity: '0' },
 				},
 				slideUp: {
-					'0%': { transform: 'translateY(30px)' },
-					'100%': { transform: 'translateY(0)' },
+					'0%': { transform: 'translateY(30px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
 				},
 				slideUpMobile: {
 					'0%': { transform: 'translateY(50px)' },
