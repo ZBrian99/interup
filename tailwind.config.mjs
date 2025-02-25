@@ -107,7 +107,7 @@ export default {
 			animation: {
 				'fade-in': 'fadeIn 1s ease-in-out forwards 0.5s',
 				'fade-out': 'fadeOut 0.5s ease-in-out',
-				'slide-up': 'slideUp 1s ease-out forwards 0.1s',
+				'slide-up': 'slideUp 1s ease-out forwards 0.2s',
 				'slide-up-lg': 'slideUpDesktop 1s ease-out forwards',
 				'slide-down': 'slideDown 1.5s ease-out',
 				'slide-left': 'slideLeft 1s ease-in-out forwards 1.25s',
