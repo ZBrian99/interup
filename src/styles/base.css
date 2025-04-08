@@ -37,11 +37,8 @@
 		@apply text-lg md:text-xl leading-snug;
 	}
 
-	/* Scrollbar personalizada */
-	
-	/* Primero definimos los estilos para Webkit (Chrome, Safari, etc) */
 	::-webkit-scrollbar {
-		width: 0.375rem; /* 6px */
+		width: 0.375rem; 
 	}
 
 	::-webkit-scrollbar-track {

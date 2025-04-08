@@ -1,5 +1,4 @@
 ---
-// Interfaces para tipar los datos del proyecto
 interface ProjectLink {
 	url: string;
 	label: string;
@@ -13,10 +12,9 @@ interface Project {
 	links?: ProjectLink[];
 }
 
-// Props que recibe el componente
 interface Props {
-	project: Project; // Datos del proyecto a mostrar
-	projectIndex: number; // Índice para identificar el carrusel
+	project: Project;
+	projectIndex: number;
 }
 
 const { project, projectIndex } = Astro.props as Props;
@@ -27,14 +25,11 @@ const message = `¡Hola! Me gustaría obtener más información sobre el proyect
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 ---
 
-<!-- Contenedor principal de la tarjeta con gradiente y efectos hover -->
 <article
 	class='bg-purple-normal rounded-2xl overflow-hidden shadow-lg flex flex-col max-w-[25rem] md:max-w-none md:w-[calc(50%-1rem)] lg:w-full z-10 hover:translate-y-[-.5rem] ease-in-out hover:shadow-xl transition-all duration-300 group/card'
 >
-	{/* Sección del Carrusel de Imágenes */}
 	<div class='relative aspect-video' data-carousel={`carousel-${projectIndex}`}>
 		<div class='carousel-container h-full'>
-			{/* Mapeo de las imágenes del proyecto */}
 			{
 				project.images.map((image: string, imageIndex: number) => (
 					<div
@@ -46,7 +41,6 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 				))
 			}
 
-			{/* Botón de navegación anterior */}
 			<button
 				class='carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/50 rounded-full hover:bg-black/70 transition-colors'
 				aria-label='Anterior imagen'
@@ -57,7 +51,6 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 				</svg>
 			</button>
 
-			{/* Botón de navegación siguiente */}
 			<button
 				class='carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/50 rounded-full hover:bg-black/70 transition-colors'
 				aria-label='Siguiente imagen'
@@ -68,7 +61,6 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 				</svg>
 			</button>
 
-			{/* Indicadores de posición (dots) */}
 			<div
 				class='carousel-dots absolute bottom-2 bg-black/50 hover:bg-black/70 left-1/2 -translate-x-1/2 flex gap-2 px-2 py-1 rounded-full'
 			>
@@ -85,9 +77,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 		</div>
 	</div>
 
-	{/* Sección de información del proyecto */}
 	<div class='p-6 pt-4 flex flex-col grow'>
-		{/* Título y descripción */}
 		<h3 class='text-xl font-bold text-white mb-3 group-hover/card:text-green-normal transition-colors duration-300'>
 			{project.title}
 		</h3>
@@ -95,9 +85,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 			{project.description}
 		</p>
 
-		{/* Botones de acción */}
 		<div class='flex gap-4 mt-auto flex-wrap'>
-			{/* Botón Principal - Ver Proyecto */}
 			{
 				project.links?.[0] && (
 					<a
@@ -121,7 +109,6 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 				)
 			}
 
-			{/* Botón Secundario - WhatsApp */}
 			<a
 				href={whatsappUrl}
 				target='_blank'
@@ -150,7 +137,6 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 	</div>
 </article>
 
-{/* Estilos para la animación del carrusel */}
 <style>
 	.carousel-slide {
 		opacity: 0;

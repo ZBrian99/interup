@@ -29,7 +29,6 @@ const reasons: Reason[] = [
 ---
 
 <div class='w-full lg:w-1/2 flex aspect-square items-center justify-center mx-auto border relative overflow-hidden'>
-	<!-- Círculo central -->
 	<div
 		class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 sm:p-5 md:w-48 md:h-48 md:p-8 lg:w-44 lg:h-44 lg:p-7 xl:p-8 xl:w-48 xl:h-48 bg-purple-2 border border-purple-light/20 rounded-full flex flex-col items-center justify-center text-center hover:bg-purple-3 transition-colors duration-300'
 	>
@@ -40,9 +39,8 @@ const reasons: Reason[] = [
 	{
 		reasons.map((reason, index) => {
 			const angle = (index * 72 * Math.PI) / 180;
-			// Radio adaptativo según el tamaño de pantalla
-			const baseRadius = 100; // Radio base para móviles
-			const radius = `calc(min(${baseRadius}px + 7vw, 210px))`; // Radio máximo limitado a 200px
+			const baseRadius = 100; 
+			const radius = `calc(min(${baseRadius}px + 7vw, 210px))`;
 			const x = `calc(cos(${angle}rad) * ${radius})`;
 			const y = `calc(sin(${angle}rad) * ${radius})`;
 
