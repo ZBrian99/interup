@@ -77,22 +77,22 @@ export default {
 			serif: ['Nunito Variable', 'serif'],
 		},
 		fontSize: {
-			sm: '0.875rem', // 14px
-			base: '1rem', // 16px
-			lg: '1.25rem', // 20px
-			xl: '1.5rem', // 24px
-			'2xl': '2rem', // 32px
-			'3xl': '2.5rem', // 40px
-			'4xl': '3rem', // 48px
+			sm: '0.875rem',
+			base: '1rem',
+			lg: '1.25rem',
+			xl: '1.5rem',
+			'2xl': '2rem',
+			'3xl': '2.5rem',
+			'4xl': '3rem',
 		},
 		screens: {
-			xs: '375px', // Móviles pequeños
-			sm: '480px', // Móviles grandes
-			md: '768px', // Tablets
-			md2: '900px', // Tablets grandes
-			lg: '1024px', // Laptops/Desktops pequeños
-			xl: '1280px', // Desktops
-			'2xl': '1440px', // Pantallas grandes
+			xs: '375px',
+			sm: '480px',
+			md: '768px',
+			md2: '900px',
+			lg: '1024px',
+			xl: '1280px',
+			'2xl': '1440px',
 		},
 		extend: {
 			lineHeight: {
@@ -102,7 +102,7 @@ export default {
 				relaxed: '1.625',
 			},
 			maxWidth: {
-				container: '80rem', // 1280px
+				container: '80rem',
 			},
 			animation: {
 				'fade-in': 'fadeIn 1s ease-in-out forwards 0.5s',
@@ -183,7 +183,7 @@ export default {
 						transform: 'translate(-10px, -20px) scale(1.05)',
 					},
 				},
-		
+
 				scalePulse: {
 					'0%': { transform: 'scale(1)' },
 					'3%': { transform: 'scale(1.15)' },
@@ -220,9 +220,9 @@ export default {
 				lg: '1rem',
 			},
 			boxShadow: {
-				sm: '0 2px 4px rgba(0, 0, 0, 0.05)', // Sutil, para elementos hover
-				md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // Cards, elementos elevados
-				lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // Modales, elementos destacados
+				sm: '0 2px 4px rgba(0, 0, 0, 0.05)',
+				md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+				lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
 			},
 		},
 	},

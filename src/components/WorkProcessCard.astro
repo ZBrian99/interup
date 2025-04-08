@@ -13,7 +13,6 @@ const { nombre, descripcion, icon, index, isLast } = Astro.props;
 <div
 	class={`relative flex-1 group md2:w-1/2 ${index % 2 === 0 ? 'md2:mr-auto' : 'md2:ml-auto'} py-4 md2:py-0 group z-10`}
 >
-	<!-- Conector (línea + punto) -->
 	<div>
 		<div
 			class={`absolute top-0 bottom-0 w-px bg-purple-light/80 
@@ -42,7 +41,6 @@ const { nombre, descripcion, icon, index, isLast } = Astro.props;
 		</div>
 	</div>
 
-	<!-- Card -->
 	<div
 		class={`bg-purple-normal rounded-lg p-6 shadow-lg  
 		ml-8 ${index % 2 === 0 ? 'md2:ml-0 md2:mr-12' : 'md2:ml-12'}
