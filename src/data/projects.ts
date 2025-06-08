@@ -15,7 +15,7 @@ export const projects: Project[] = [
 			'/projects/cursos/1_7.webp',
 			'/projects/cursos/1_8.webp',
 		],
-		links: [{ url: 'https://demo-cursos.up.railway.app/login', label: 'Ver Demo', icon: 'portal' }],
+		links: [{ url: 'https://demo-courses.up.railway.app/login', label: 'Ver Demo', icon: 'portal' }],
 	},
 	{
 		title: 'Control de Acceso Gym',
