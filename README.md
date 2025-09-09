@@ -12,7 +12,7 @@ InterUp es una landing page profesional que muestra mis servicios como desarroll
 
 ## 🌐 Versión Final
 
-[Ver Sitio Web](https://interup.dev/) - Visita la versión desplegada del proyecto
+[Ver Sitio Web](https://interup.up.railway.app/) - Visita la versión desplegada del proyecto
 
 ## ✨ Características
 
@@ -74,7 +74,7 @@ npm run dev
 ## 📧 Contacto
 
 - **Email:** brian.zelada99@gmail.com
-- **Portfolio:** [Portfolio Web](https://brianzelada.interup.dev/)
+- **Portfolio:** [Portfolio Web](https://brianzelada.vercel.app/)
 - **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/brianzelada/)
 - **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99)
 
